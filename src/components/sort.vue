@@ -136,7 +136,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import { useMainStore } from '@/stores/main'
-
+import { fyjk3 } from '@/assets/data.js'
 
 export default {
   components: {
@@ -266,20 +266,25 @@ export default {
       })
     },
     getArticles() {
-      this.$http
-        .post(this.$constant.baseURL + '/article/listArticle', this.pagination)
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.articles = this.articles.concat(res.data.records)
-            this.pagination.total = res.data.total
-          }
-        })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      const res =  fyjk3
+      if (!this.$common.isEmpty(res.data)) {
+        this.articles = this.articles.concat(res.data.records)
+        this.pagination.total = res.data.total
+      }
+      // this.$http
+      //   .post(this.$constant.baseURL + '/article/listArticle', this.pagination)
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.articles = this.articles.concat(res.data.records)
+      //       this.pagination.total = res.data.total
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
   },
 }

@@ -426,6 +426,8 @@
 <script>
 import { $on, $off, $once, $emit } from '../utils/gogocodeTransfer'
 import { useMainStore } from '@/stores/main'
+import { fyjk } from '@/assets/data.js'
+import { fyjk1 } from '@/assets/data.js'
 
 export default {
   data() {
@@ -512,10 +514,10 @@ export default {
     this.syncFloatingUiState()
 
     // 初始化插件加载器（加载已安装的 .zip 插件的前端 JS/CSS）
-    this.runWhenIdle(async () => {
-      const { initPluginLoader } = await import('@/composables/usePluginLoader')
-      initPluginLoader()
-    })
+    // this.runWhenIdle(async () => {
+    //   const { initPluginLoader } = await import('@/composables/usePluginLoader')
+    //   initPluginLoader()
+    // })
 
     // 初始化简化语言切换按钮显示状态（已注释，不再需要）
     // this.updateSimpleLangSwitchVisibility();
@@ -953,51 +955,68 @@ export default {
         })
     },
     getWebInfo() {
-      this.$http
-        .get(this.$constant.baseURL + '/webInfo/getWebInfo')
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            // 保存原始的webTitle字符串用于设置页面标题
-            const originalWebTitle = res.data.webTitle
+      const res = fyjk1
+      if (!this.$common.isEmpty(res.data)) {
+        // 保存原始的webTitle字符串用于设置页面标题
+        const originalWebTitle = res.data.webTitle
+        // 处理网站信息
+        this.mainStore.loadWebInfo(res.data)
+        // 更新浏览器标签栏标题 - 使用原始的webTitle字符串
+        if (originalWebTitle) {
+          document.title = originalWebTitle
+          // 同时更新title.js中保存的原始标题
+          window.OriginTitile = originalWebTitle
+        }
+        // 获取完 webInfo 后再执行一次自动夜间判断
+        this.maybeApplyAutoNight()
+      }
+      // this.$http
+      //   .get(this.$constant.baseURL + '/webInfo/getWebInfo')
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       // 保存原始的webTitle字符串用于设置页面标题
+      //       const originalWebTitle = res.data.webTitle
 
-            // 处理网站信息
-            this.mainStore.loadWebInfo(res.data)
+      //       // 处理网站信息
+      //       this.mainStore.loadWebInfo(res.data)
 
-            // 更新浏览器标签栏标题 - 使用原始的webTitle字符串
-            if (originalWebTitle) {
-              document.title = originalWebTitle
-              // 同时更新title.js中保存的原始标题
-              window.OriginTitile = originalWebTitle
-            }
+      //       // 更新浏览器标签栏标题 - 使用原始的webTitle字符串
+      //       if (originalWebTitle) {
+      //         document.title = originalWebTitle
+      //         // 同时更新title.js中保存的原始标题
+      //         window.OriginTitile = originalWebTitle
+      //       }
 
-            // 获取完 webInfo 后再执行一次自动夜间判断
-            this.maybeApplyAutoNight()
-          }
-        })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      //       // 获取完 webInfo 后再执行一次自动夜间判断
+      //       this.maybeApplyAutoNight()
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
 
     // 已移除定时刷新访问量的逻辑
     getSysConfig() {
-      this.$http
-        .get(this.$constant.baseURL + '/sysConfig/listSysConfig')
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.mainStore.loadSysConfig(res.data)
-            this.buildCssPicture()
-          }
-        })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      this.mainStore.loadSysConfig(fyjk.data)
+      this.buildCssPicture()
+      // this.$http
+      //   .get(this.$constant.baseURL + '/sysConfig/listSysConfig')
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.mainStore.loadSysConfig(res.data)
+      //       this.buildCssPicture()
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
     buildCssPicture() {
       let root = document.querySelector(':root')
@@ -1041,19 +1060,111 @@ export default {
       )
     },
     getSortInfo() {
-      this.$http
-        .get(this.$constant.baseURL + '/webInfo/getSortInfo')
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.mainStore.loadSortInfo(res.data)
-          }
-        })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      // 替换接口数据
+      var res = {
+          "code": 200,
+          "message": null,
+          "data": [
+              {
+                  "id": 1,
+                  "sortName": "Linux",
+                  "sortDescription": "Linux基础操作",
+                  "sortType": 0,
+                  "priority": 99,
+                  "countOfSort": 0,
+                  "labels": [
+                      {
+                          "id": 1,
+                          "sortId": 1,
+                          "labelName": "Debian",
+                          "labelDescription": "Debian",
+                          "countOfLabel": 0
+                      }
+                  ]
+              },
+              {
+                  "id": 2,
+                  "sortName": "Linux运维入门",
+                  "sortDescription": "Linux运维入门相关操作",
+                  "sortType": 0,
+                  "priority": 99,
+                  "countOfSort": 3,
+                  "labels": [
+                      {
+                          "id": 2,
+                          "sortId": 2,
+                          "labelName": "服务器安全",
+                          "labelDescription": "服务器安全",
+                          "countOfLabel": 1
+                      },
+                      {
+                          "id": 4,
+                          "sortId": 2,
+                          "labelName": "Docker",
+                          "labelDescription": "Docker相关",
+                          "countOfLabel": 1
+                      },
+                      {
+                          "id": 5,
+                          "sortId": 2,
+                          "labelName": "openclaw",
+                          "labelDescription": "openclaw及其相关知识",
+                          "countOfLabel": 1
+                      }
+                  ]
+              },
+              {
+                  "id": 3,
+                  "sortName": "白嫖教程",
+                  "sortDescription": "主要分享一些可以免费白嫖的福利",
+                  "sortType": 0,
+                  "priority": 1,
+                  "countOfSort": 1,
+                  "labels": [
+                      {
+                          "id": 3,
+                          "sortId": 3,
+                          "labelName": "雨云自动签到",
+                          "labelDescription": "聚合全网最新的雨云（Rainyun）自动签到      解决方案。无论你是寻找 GitHub Actions 0元挂机脚本、宝塔面板     定时任务代码，还是 Docker 部署教程，这里都有。教你如何实现每    日自动领积分，轻松免费续费或白嫖云服务器。",
+                          "countOfLabel": 1
+                      }
+                  ]
+              },
+              {
+                  "id": 4,
+                  "sortName": "蓝桥杯",
+                  "sortDescription": "蓝桥杯备考",
+                  "sortType": 0,
+                  "priority": 1,
+                  "countOfSort": 3,
+                  "labels": [
+                      {
+                          "id": 6,
+                          "sortId": 4,
+                          "labelName": "洛谷",
+                          "labelDescription": "洛谷，主要刷完基础1-6",
+                          "countOfLabel": 3
+                      }
+                  ]
+              }
+          ],
+          "currentTimeMillis": 1774346143006,
+          "success": true
+      }
+      this.mainStore.loadSortInfo(res.data)
+      // this.$http
+      //   .get(this.$constant.baseURL + '/webInfo/getSortInfo')
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.mainStore.loadSortInfo(res.data)
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
     changeColor() {
       this.isDark = !this.isDark

@@ -4,7 +4,7 @@
     <Live2DWidgetAsync v-if="mode === 'live2d'" />
 
     <!-- 简单按钮模式 -->
-    <AIChatButtonAsync v-else-if="mode === 'button'" />
+    <!-- <AIChatButtonAsync v-else-if="mode === 'button'" /> -->
 
     <!-- AI聊天面板（懒加载） -->
     <AIChatPanelAsync v-if="showChat" />

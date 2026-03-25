@@ -14,7 +14,10 @@
           :style="bannerStyle"
           class="background-image-index"
           lazy
-          :src="
+          :src="'./assets/backgroundPicture.jpg'          "
+          fit="cover"
+        >
+        <!-- :src="
             !$common.isEmpty(mainStore.webInfo.backgroundImage)
               ? mainStore.webInfo.backgroundImage
               : !$common.isEmpty(mainStore.webInfo.randomCover) &&
@@ -25,9 +28,7 @@
                   )
                 ]
               : './assets/backgroundPicture.jpg'
-          "
-          fit="cover"
-        >
+          " -->
           <template v-slot:error>
             <div
               class="image-slot background-image-index-error"
@@ -241,6 +242,7 @@ import { defineAsyncComponent } from 'vue'
 import { $on, $off, $once, $emit } from '../utils/gogocodeTransfer'
 import { useMainStore } from '@/stores/main'
 import { pushNotification } from '@/utils/notification-utils'
+import { fyjk3 } from '@/assets/data.js'
 
 export default {
   components: {
@@ -530,41 +532,496 @@ export default {
     },
 
     async getArticles() {
-      await this.$http
-        .post(this.$constant.baseURL + '/article/listArticle', this.pagination)
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.articles = this.articles.concat(res.data.records)
-            this.pagination.total = res.data.total
-          }
-        })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      const res =  fyjk3
+      if (!this.$common.isEmpty(res.data)) {
+        this.articles = this.articles.concat(res.data.records)
+        this.pagination.total = res.data.total
+      }
+      // await this.$http
+        // .post(this.$constant.baseURL + '/article/listArticle', this.pagination)
+        // .then((res) => {
+        //   if (!this.$common.isEmpty(res.data)) {
+        //     this.articles = this.articles.concat(res.data.records)
+        //     this.pagination.total = res.data.total
+        //   }
+        // })
+        // .catch((error) => {
+        //   this.$message({
+        //     message: error.message,
+        //     type: 'error',
+        //   })
+        // })
     },
     getSortArticles() {
       // 添加时间戳参数，避免浏览器缓存
-      const timestamp = Date.now()
-      const url = `${this.$constant.baseURL}/article/listSortArticle?t=${timestamp}`
+      // 替换接口数据
+      const res={
+          "code": 200,
+          "message": null,
+          "data": {
+        "2": [
+            {
+                "id": 4,
+                "userId": 1,
+                "articleCover": "/static/randomCover/LeapYa11770000181478338.webp",
+                "articleTitle": "OpenClaw+QQ官方Bot轻量级服务器安装部署指南",
+                "articleContent": " 前言\n最近 OpenClaw 的热度很高，作为一款宣称可以实际执行任务的 AI 智能体框架，它的应用潜力引起了我的注意。很多人认为部署这类 AI 框架门槛...",
+                "viewCount": 9,
+                "commentStatus": true,
+                "recommendStatus": true,
+                "videoUrl": null,
+                "password": null,
+                "tips": "密码",
+                "viewStatus": true,
+                "createTime": "2026-03-09 18:28:49",
+                "updateTime": "2026-03-21 16:03:33",
+                "updateBy": "LeapYa",
+                "sortId": 2,
+                "labelId": 5,
+                "commentCount": 0,
+                "username": "LeapYa",
+                "sort": {
+                    "id": 2,
+                    "sortName": "Linux运维入门",
+                    "sortDescription": "Linux运维入门相关操作",
+                    "sortType": 0,
+                    "priority": 99,
+                    "countOfSort": 3,
+                    "labels": null
+                },
+                "label": {
+                    "id": 5,
+                    "sortId": 2,
+                    "labelName": "openclaw",
+                    "labelDescription": "openclaw及其相关知识",
+                    "countOfLabel": 1
+                },
+                "hasVideo": false,
+                "title": null,
+                "content": null,
+                "classify": null,
+                "cover": null,
+                "summary": "本文详细记录了在低配云服务器上部署OpenClaw AI智能体框架，并成功对接QQ机器人的全过程。文章分享了环境配置、核心安装、插件集成以及常见问题的避坑经验，旨在帮助读者快速上手并利用该框架提升自动化任务处理效率。",
+                "submitToSearchEngine": true,
+                "matchedLanguage": null,
+                "isTranslationMatch": null,
+                "hasTranslationMatch": null,
+                "sortName": "Linux运维入门",
+                "labelName": "openclaw",
+                "articleUrl": "https://leapya.com/article/4",
+                "translatedTitle": null,
+                "translatedContent": null,
+                "skipAiTranslation": null,
+                "pendingTranslationTitle": null,
+                "pendingTranslationContent": null,
+                "pendingTranslationLanguage": null,
+                "articleThemeConfig": null,
+                "payType": 0,
+                "payAmount": null,
+                "freePercent": 30,
+                "paywalled": null,
+                "paidCount": null
+            },
+            {
+                "id": 3,
+                "userId": 1,
+                "articleCover": "/static/randomCover/LeapYa11770000181478338.webp",
+                "articleTitle": "Docker安装与入门保姆级教程",
+                "articleContent": " 简介\n\n说实话，没接触过 Docker 之前，我在服务器上装环境着实折腾了不少时间——装完 Java 发现版本不对，装完 MySQL 发现和系统库冲突……...",
+                "viewCount": 13,
+                "commentStatus": true,
+                "recommendStatus": false,
+                "videoUrl": null,
+                "password": null,
+                "tips": null,
+                "viewStatus": true,
+                "createTime": "2026-02-23 23:55:12",
+                "updateTime": "2026-03-21 15:58:39",
+                "updateBy": "LeapYa",
+                "sortId": 2,
+                "labelId": 4,
+                "commentCount": 0,
+                "username": "LeapYa",
+                "sort": {
+                    "id": 2,
+                    "sortName": "Linux运维入门",
+                    "sortDescription": "Linux运维入门相关操作",
+                    "sortType": 0,
+                    "priority": 99,
+                    "countOfSort": 3,
+                    "labels": null
+                },
+                "label": {
+                    "id": 4,
+                    "sortId": 2,
+                    "labelName": "Docker",
+                    "labelDescription": "Docker相关",
+                    "countOfLabel": 1
+                },
+                "hasVideo": false,
+                "title": null,
+                "content": null,
+                "classify": null,
+                "cover": null,
+                "summary": "Docker教程：从零安装到实战，涵盖核心概念、常用命令及多容器项目部署，解决环境配置难题。",
+                "submitToSearchEngine": true,
+                "matchedLanguage": null,
+                "isTranslationMatch": null,
+                "hasTranslationMatch": null,
+                "sortName": "Linux运维入门",
+                "labelName": "Docker",
+                "articleUrl": "https://leapya.com/article/3",
+                "translatedTitle": null,
+                "translatedContent": null,
+                "skipAiTranslation": null,
+                "pendingTranslationTitle": null,
+                "pendingTranslationContent": null,
+                "pendingTranslationLanguage": null,
+                "articleThemeConfig": null,
+                "payType": 0,
+                "payAmount": null,
+                "freePercent": 30,
+                "paywalled": null,
+                "paidCount": null
+            },
+            {
+                "id": 1,
+                "userId": 1,
+                "articleCover": "/static/randomCover/LeapYa11770000181478338.webp",
+                "articleTitle": "Debian 与 Ubuntu 安装 Fail2Ban 实现 SSH 自动封禁 IP 防暴力破解教程（保姆级教程）",
+                "articleContent": " 简介\n本教程将详细介绍如何在 Debian 和 Ubuntu 系统中安装与配置 Fail2Ban，通过监控 /var/log/auth.log 自动识别 ...",
+                "viewCount": 33,
+                "commentStatus": true,
+                "recommendStatus": false,
+                "videoUrl": null,
+                "password": null,
+                "tips": "123456",
+                "viewStatus": true,
+                "createTime": "2026-01-29 17:20:36",
+                "updateTime": "2026-02-06 00:31:12",
+                "updateBy": "LeapYa",
+                "sortId": 2,
+                "labelId": 2,
+                "commentCount": 0,
+                "username": "LeapYa",
+                "sort": {
+                    "id": 2,
+                    "sortName": "Linux运维入门",
+                    "sortDescription": "Linux运维入门相关操作",
+                    "sortType": 0,
+                    "priority": 99,
+                    "countOfSort": 3,
+                    "labels": null
+                },
+                "label": {
+                    "id": 2,
+                    "sortId": 2,
+                    "labelName": "服务器安全",
+                    "labelDescription": "服务器安全",
+                    "countOfLabel": 1
+                },
+                "hasVideo": false,
+                "title": null,
+                "content": null,
+                "classify": null,
+                "cover": null,
+                "summary": "本教程介绍在Debian/Ubuntu系统安装配置Fail2Ban，通过监控日志自动封禁SSH暴力破解IP，提升服务器安全。",
+                "submitToSearchEngine": false,
+                "matchedLanguage": null,
+                "isTranslationMatch": null,
+                "hasTranslationMatch": null,
+                "sortName": "Linux运维入门",
+                "labelName": "服务器安全",
+                "articleUrl": "https://leapya.com/article/1",
+                "translatedTitle": null,
+                "translatedContent": null,
+                "skipAiTranslation": null,
+                "pendingTranslationTitle": null,
+                "pendingTranslationContent": null,
+                "pendingTranslationLanguage": null,
+                "articleThemeConfig": null,
+                "payType": 0,
+                "payAmount": null,
+                "freePercent": 30,
+                "paywalled": null,
+                "paidCount": null
+            }
+        ],
+        "3": [
+            {
+                "id": 2,
+                "userId": 1,
+                "articleCover": "/static/randomCover/LeapYa11770000181478338.webp",
+                "articleTitle": "2026年最新 教你0元搭建雨云自动签到，每日自动领积分续费（保姆级教程）",
+                "articleContent": "众所周知，雨云（Rainyun）的签到能领积分，积分能换主机。但是每天手动签到太麻烦，买台服务器挂脚本又有点\"杀鸡焉用牛刀\"（而且甚至可能签到的积分还不够服务器...",
+                "viewCount": 62,
+                "commentStatus": true,
+                "recommendStatus": true,
+                "videoUrl": null,
+                "password": null,
+                "tips": "密码",
+                "viewStatus": true,
+                "createTime": "2026-02-03 14:16:19",
+                "updateTime": "2026-02-06 00:04:37",
+                "updateBy": "LeapYa",
+                "sortId": 3,
+                "labelId": 3,
+                "commentCount": 0,
+                "username": "LeapYa",
+                "sort": {
+                    "id": 3,
+                    "sortName": "白嫖教程",
+                    "sortDescription": "主要分享一些可以免费白嫖的福利",
+                    "sortType": 0,
+                    "priority": 1,
+                    "countOfSort": 1,
+                    "labels": null
+                },
+                "label": {
+                    "id": 3,
+                    "sortId": 3,
+                    "labelName": "雨云自动签到",
+                    "labelDescription": "聚合全网最新的雨云（Rainyun）自动签到解决方案。无论你是寻找 GitHub Actions 0元挂机脚本、宝塔面板定时任务代码，还是 Docker 部署教程，这里都有。教你如何实现每日自动领积分，轻松免费续费或白嫖云服务器。",
+                    "countOfLabel": 1
+                },
+                "hasVideo": false,
+                "title": null,
+                "content": null,
+                "classify": null,
+                "cover": null,
+                "summary": "利用GitHub Actions免费全自动完成雨云每日签到，无需服务器。支持验证码、通知，三步即可搭建。",
+                "submitToSearchEngine": true,
+                "matchedLanguage": null,
+                "isTranslationMatch": null,
+                "hasTranslationMatch": null,
+                "sortName": "白嫖教程",
+                "labelName": "雨云自动签到",
+                "articleUrl": "https://leapya.com/article/2",
+                "translatedTitle": null,
+                "translatedContent": null,
+                "skipAiTranslation": null,
+                "pendingTranslationTitle": null,
+                "pendingTranslationContent": null,
+                "pendingTranslationLanguage": null,
+                "articleThemeConfig": null,
+                "payType": 0,
+                "payAmount": null,
+                "freePercent": 30,
+                "paywalled": null,
+                "paidCount": null
+            }
+        ],
+        "4": [
+            {
+                "id": 7,
+                "userId": 1,
+                "articleCover": "/static/randomCover/LeapYa11770000181478338.webp",
+                "articleTitle": "备考蓝桥杯 Python B 组 Day3：洛谷入门3刷题记",
+                "articleContent": "1. 在python中转字符串、整型转换是极其消耗时间的事情，容易引发超时，在[NOIP 2013 普及组] 计数问题这个题目中，我在循环嵌套里一直转字符串...",
+                "viewCount": 1,
+                "commentStatus": true,
+                "recommendStatus": false,
+                "videoUrl": null,
+                "password": null,
+                "tips": null,
+                "viewStatus": true,
+                "createTime": "2026-03-13 00:11:45",
+                "updateTime": "2026-03-13 00:11:45",
+                "updateBy": null,
+                "sortId": 4,
+                "labelId": 6,
+                "commentCount": 0,
+                "username": "LeapYa",
+                "sort": {
+                    "id": 4,
+                    "sortName": "蓝桥杯",
+                    "sortDescription": "蓝桥杯备考",
+                    "sortType": 0,
+                    "priority": 1,
+                    "countOfSort": 3,
+                    "labels": null
+                },
+                "label": {
+                    "id": 6,
+                    "sortId": 4,
+                    "labelName": "洛谷",
+                    "labelDescription": "洛谷，主要刷完基础1-6",
+                    "countOfLabel": 3
+                },
+                "hasVideo": false,
+                "title": null,
+                "content": null,
+                "classify": null,
+                "cover": null,
+                "summary": "循环内频繁类型转换易致超时，需培养数学思维优化暴力解法。",
+                "submitToSearchEngine": true,
+                "matchedLanguage": null,
+                "isTranslationMatch": null,
+                "hasTranslationMatch": null,
+                "sortName": "蓝桥杯",
+                "labelName": "洛谷",
+                "articleUrl": "https://leapya.com/article/7",
+                "translatedTitle": null,
+                "translatedContent": null,
+                "skipAiTranslation": null,
+                "pendingTranslationTitle": null,
+                "pendingTranslationContent": null,
+                "pendingTranslationLanguage": null,
+                "articleThemeConfig": null,
+                "payType": 0,
+                "payAmount": null,
+                "freePercent": 30,
+                "paywalled": null,
+                "paidCount": null
+            },
+            {
+                "id": 6,
+                "userId": 1,
+                "articleCover": "/static/randomCover/LeapYa11770000181478338.webp",
+                "articleTitle": "备考蓝桥杯 Day2：分支结构",
+                "articleContent": "![image.png](/static/articlePicture/LeapYa11773163431463928.webp)\n\n今天按计划刷洛谷的【入门2...",
+                "viewCount": 0,
+                "commentStatus": true,
+                "recommendStatus": false,
+                "videoUrl": null,
+                "password": null,
+                "tips": null,
+                "viewStatus": true,
+                "createTime": "2026-03-11 01:26:45",
+                "updateTime": "2026-03-11 01:26:45",
+                "updateBy": null,
+                "sortId": 4,
+                "labelId": 6,
+                "commentCount": 0,
+                "username": "LeapYa",
+                "sort": {
+                    "id": 4,
+                    "sortName": "蓝桥杯",
+                    "sortDescription": "蓝桥杯备考",
+                    "sortType": 0,
+                    "priority": 1,
+                    "countOfSort": 3,
+                    "labels": null
+                },
+                "label": {
+                    "id": 6,
+                    "sortId": 4,
+                    "labelName": "洛谷",
+                    "labelDescription": "洛谷，主要刷完基础1-6",
+                    "countOfLabel": 3
+                },
+                "hasVideo": false,
+                "title": null,
+                "content": null,
+                "classify": null,
+                "cover": null,
+                "summary": "练习中遇到条件嵌套和逻辑混乱问题。学习了f-string格式化(:g)和模拟优于复杂公式的思路。",
+                "submitToSearchEngine": true,
+                "matchedLanguage": null,
+                "isTranslationMatch": null,
+                "hasTranslationMatch": null,
+                "sortName": "蓝桥杯",
+                "labelName": "洛谷",
+                "articleUrl": "https://leapya.com/article/6",
+                "translatedTitle": null,
+                "translatedContent": null,
+                "skipAiTranslation": null,
+                "pendingTranslationTitle": null,
+                "pendingTranslationContent": null,
+                "pendingTranslationLanguage": null,
+                "articleThemeConfig": null,
+                "payType": 0,
+                "payAmount": null,
+                "freePercent": 30,
+                "paywalled": null,
+                "paidCount": null
+            },
+            {
+                "id": 5,
+                "userId": 1,
+                "articleCover": "/static/randomCover/LeapYa11770000181478338.webp",
+                "articleTitle": "备考蓝桥杯 Python B 组 Day1：洛谷入门1刷题记录与基础语法速查笔记",
+                "articleContent": "进入专升本后的第一个学年，课业并不轻松，眨眼马上又要就业了。为了能轻松拿下蓝桥杯，我选择了有些基础的 Python，主打一个性价比，不再想花大量时间去折腾 C+...",
+                "viewCount": 7,
+                "commentStatus": true,
+                "recommendStatus": false,
+                "videoUrl": null,
+                "password": null,
+                "tips": null,
+                "viewStatus": true,
+                "createTime": "2026-03-10 01:31:52",
+                "updateTime": "2026-03-10 02:47:40",
+                "updateBy": "LeapYa",
+                "sortId": 4,
+                "labelId": 6,
+                "commentCount": 0,
+                "username": "LeapYa",
+                "sort": {
+                    "id": 4,
+                    "sortName": "蓝桥杯",
+                    "sortDescription": "蓝桥杯备考",
+                    "sortType": 0,
+                    "priority": 1,
+                    "countOfSort": 3,
+                    "labels": null
+                },
+                "label": {
+                    "id": 6,
+                    "sortId": 4,
+                    "labelName": "洛谷",
+                    "labelDescription": "洛谷，主要刷完基础1-6",
+                    "countOfLabel": 3
+                },
+                "hasVideo": false,
+                "title": null,
+                "content": null,
+                "classify": null,
+                "cover": null,
+                "summary": "备赛蓝桥杯学生分享Python学习笔记，总结新手常见误区与核心语法模板，旨在高效刷题。",
+                "submitToSearchEngine": true,
+                "matchedLanguage": null,
+                "isTranslationMatch": null,
+                "hasTranslationMatch": null,
+                "sortName": "蓝桥杯",
+                "labelName": "洛谷",
+                "articleUrl": "https://leapya.com/article/5",
+                "translatedTitle": null,
+                "translatedContent": null,
+                "skipAiTranslation": null,
+                "pendingTranslationTitle": null,
+                "pendingTranslationContent": null,
+                "pendingTranslationLanguage": null,
+                "articleThemeConfig": null,
+                "payType": 0,
+                "payAmount": null,
+                "freePercent": 30,
+                "paywalled": null,
+                "paidCount": null
+            }
+        ]
+          },
+          "currentTimeMillis": 1774346143312,
+          "success": true
+      }
+      this.sortArticles = res.data
+      // const timestamp = Date.now()
+      // const url = `${this.$constant.baseURL}/article/listSortArticle?t=${timestamp}`
 
-      this.$http
-        .get(url)
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.sortArticles = res.data
-          } else {
-          }
-        })
-        .catch((error) => {
-          console.error('获取分类文章列表失败:', error)
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      // this.$http
+      //   .get(url)
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.sortArticles = res.data
+      //     } else {
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     console.error('获取分类文章列表失败:', error)
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
     navigation(selector) {
       let pageId = document.querySelector(selector)

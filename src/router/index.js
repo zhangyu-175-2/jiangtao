@@ -244,9 +244,9 @@ router.afterEach((to, from) => {
   if (from.name && to.fullPath === from.fullPath) return
 
   try {
-    const url = constant.baseURL + '/track/pageview?path=' + encodeURIComponent(to.fullPath)
-    // 使用 fetch + keepalive + credentials 代替 sendBeacon，cookie会自动携带用户身份
-    fetch(url, { method: 'POST', keepalive: true, credentials: 'include' }).catch(() => { })
+    // const url = constant.baseURL + '/track/pageview?path=' + encodeURIComponent(to.fullPath)
+    // // 使用 fetch + keepalive + credentials 代替 sendBeacon，cookie会自动携带用户身份
+    // fetch(url, { method: 'POST', keepalive: true, credentials: 'include' }).catch(() => { })
   } catch (e) {
     // 统计失败不影响用户
   }

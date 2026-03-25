@@ -89,6 +89,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import { useMainStore } from '@/stores/main'
+import { fyjk2 } from '@/assets/data.js'
 
 
 export default {
@@ -168,23 +169,28 @@ export default {
       this.changePhoto()
     },
     changePhoto() {
-      this.$http
-        .post(
-          this.$constant.baseURL + '/webInfo/listResourcePath',
-          this.photoPagination
-        )
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.photoList = this.photoList.concat(res.data.records)
-            this.photoPagination.total = res.data.total
-          }
-        })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      const res =  fyjk2
+      if (!this.$common.isEmpty(res.data)) {
+        this.photoList = this.photoList.concat(res.data.records)
+        this.photoPagination.total = res.data.total
+      }
+      // this.$http
+      //   .post(
+      //     this.$constant.baseURL + '/webInfo/listResourcePath',
+      //     this.photoPagination
+      //   )
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.photoList = this.photoList.concat(res.data.records)
+      //       this.photoPagination.total = res.data.total
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
   },
 }

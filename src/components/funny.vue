@@ -92,6 +92,7 @@
 </template>
 
 <script>
+import { fyjk2 } from '@/assets/data.js'
 export default {
   components: {},
 
@@ -166,31 +167,44 @@ export default {
         })
     },
     listFunny() {
-      this.$http
-        .post(
-          this.$constant.baseURL + '/webInfo/listResourcePath',
-          this.pagination
-        )
-        .then((res) => {
-          if (
-            !this.$common.isEmpty(res.data) &&
-            !this.$common.isEmpty(res.data.records)
-          ) {
-            this.funnys.forEach((funny) => {
-              if (funny.classify === this.pagination.classify) {
-                funny.data = res.data.records
-                this.$forceUpdate()
-              }
-            })
+      const res =  fyjk2
+      if (
+        !this.$common.isEmpty(res.data) &&
+        !this.$common.isEmpty(res.data.records)
+      ) {
+        this.funnys.forEach((funny) => {
+          if (funny.classify === this.pagination.classify) {
+            funny.data = res.data.records
+            this.$forceUpdate()
           }
-          this.pagination.classify = ''
         })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      }
+      this.pagination.classify = ''
+      // this.$http
+      //   .post(
+      //     this.$constant.baseURL + '/webInfo/listResourcePath',
+      //     this.pagination
+      //   )
+      //   .then((res) => {
+      //     if (
+      //       !this.$common.isEmpty(res.data) &&
+      //       !this.$common.isEmpty(res.data.records)
+      //     ) {
+      //       this.funnys.forEach((funny) => {
+      //         if (funny.classify === this.pagination.classify) {
+      //           funny.data = res.data.records
+      //           this.$forceUpdate()
+      //         }
+      //       })
+      //     }
+      //     this.pagination.classify = ''
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
     changeFunny(classify) {
       this.funnys.forEach((funny) => {

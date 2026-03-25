@@ -1,5 +1,6 @@
 // POETIZE PWA Service Worker
 // 提供智能缓存和PWA功能
+import { fyjk1 } from '@/assets/data.js'
 
 const CACHE_NAME = 'pwa-cache-v1.0.0';
 
@@ -140,14 +141,18 @@ async function handleApiRequest(request) {
 // 判断是否应该缓存API响应
 function shouldCacheApiResponse(request) {
   const url = new URL(request.url);
-  return url.pathname.includes('/webInfo/getWebInfo') ||
-    url.pathname.includes('/seo/getSeoConfig');
+  return fyjk1
+  // return url.pathname.includes('/webInfo/getWebInfo') ||
+  //   url.pathname.includes('/seo/getSeoConfig');
 }
 
 // 判断是否应该返回缓存的API响应
 function shouldReturnCachedApiResponse(request) {
-  const url = new URL(request.url);
-  return url.pathname.includes('/webInfo/getWebInfo');
+  // const url = new URL(request.url);
+  // return url.pathname.includes('/webInfo/getWebInfo');
+  // 替换接口数据
+  return fyjk1
+
 }
 
 // 监听消息（用于与主线程通信）

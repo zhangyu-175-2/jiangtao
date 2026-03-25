@@ -418,6 +418,8 @@ import {
 } from '@element-plus/icons-vue'
 import { Vue3SeamlessScroll } from 'vue3-seamless-scroll'
 import { useMainStore } from '@/stores/main'
+import { fyjk2,fyjk3 } from '@/assets/data.js'
+
 
 export default {
   components: {
@@ -697,91 +699,138 @@ export default {
       this.showAdmireDialog = true
     },
     getAdmire() {
-      return this.$http
-        .get(this.$constant.baseURL + '/webInfo/getAdmire')
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.admires = res.data
-          }
-        })
-        .catch((error) => {
-          console.error('获取赞赏名单失败:', error)
-        })
+      // 替换接口数据
+      const res = {
+        "code": 200,
+        "message": null,
+        "data": [
+        {
+            "id": 1,
+            "username": "LeapYa",
+            "password": null,
+            "phoneNumber": null,
+            "email": null,
+            "userStatus": null,
+            "gender": null,
+            "openId": null,
+            "platformType": null,
+            "uid": null,
+            "avatar": "/static/userAvatar/LeapYa11769844514200796.webp",
+            "admire": "",
+            "subscribe": null,
+            "introduction": null,
+            "userType": null,
+            "createTime": null,
+            "updateTime": null,
+            "updateBy": null,
+            "deleted": null
+        }
+        ],
+        "currentTimeMillis": 1774396542582,
+        "success": true
+      }
+      if (!this.$common.isEmpty(res.data)) {
+        this.admires = res.data
+      }
+      // return this.$http
+      //   .get(this.$constant.baseURL + '/webInfo/getAdmire')
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.admires = res.data
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     console.error('获取赞赏名单失败:', error)
+      //   })
     },
     getRecommendArticles() {
-      return this.$http
-        .post(this.$constant.baseURL + '/article/listArticle', this.pagination)
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.recommendArticles = res.data.records
-          }
-        })
-        .catch((error) => {
-          console.error('获取推荐文章失败:', error)
-        })
+      const res =  fyjk3
+      if (!this.$common.isEmpty(res.data)) {
+        this.recommendArticles = res.data.records
+      }
+      // return this.$http
+      //   .post(this.$constant.baseURL + '/article/listArticle', this.pagination)
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.recommendArticles = res.data.records
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     console.error('获取推荐文章失败:', error)
+      //   })
     },
     showTip() {
       this.$router.push({ path: '/weiYan' })
     },
     getContactList() {
       // 从资源聚合中获取type为contact和quickEntry且启用的联系方式和快捷入口
-      return Promise.all([
-        this.$http.post(this.$constant.baseURL + '/webInfo/listResourcePath', {
-          current: 1,
-          size: 100,
-          resourceType: 'contact',
-          status: true,
-        }),
-        this.$http.post(this.$constant.baseURL + '/webInfo/listResourcePath', {
-          current: 1,
-          size: 100,
-          resourceType: 'quickEntry',
-          status: true,
-        }),
-      ])
-        .then((results) => {
-          // 分别存储联系方式和快捷入口
-          if (
-            !this.$common.isEmpty(results[0].data) &&
-            !this.$common.isEmpty(results[0].data.records)
-          ) {
-            this.contactList = results[0].data.records
-          }
-          if (
-            !this.$common.isEmpty(results[1].data) &&
-            !this.$common.isEmpty(results[1].data.records)
-          ) {
-            // 后端已经解析好了快捷入口的按钮样式，直接使用即可
-            this.quickEntryList = results[1].data.records
-          }
-        })
-        .catch((error) => {
-          console.error('获取联系方式和快捷入口失败:', error)
-        })
+      // return Promise.all([
+      //   this.$http.post(this.$constant.baseURL + '/webInfo/listResourcePath', {
+      //     current: 1,
+      //     size: 100,
+      //     resourceType: 'contact',
+      //     status: true,
+      //   }),
+      //   this.$http.post(this.$constant.baseURL + '/webInfo/listResourcePath', {
+      //     current: 1,
+      //     size: 100,
+      //     resourceType: 'quickEntry',
+      //     status: true,
+      //   }),
+      // ])
+      //   .then((results) => {
+      //     // 分别存储联系方式和快捷入口
+      //     if (
+      //       !this.$common.isEmpty(results[0].data) &&
+      //       !this.$common.isEmpty(results[0].data.records)
+      //     ) {
+      //       this.contactList = results[0].data.records
+      //     }
+      //     if (
+      //       !this.$common.isEmpty(results[1].data) &&
+      //       !this.$common.isEmpty(results[1].data.records)
+      //     ) {
+      //       // 后端已经解析好了快捷入口的按钮样式，直接使用即可
+      //       this.quickEntryList = results[1].data.records
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     console.error('获取联系方式和快捷入口失败:', error)
+      //   })
     },
     getAsideBackground() {
       // 获取侧边栏背景配置
-      return this.$http
-        .post(this.$constant.baseURL + '/webInfo/listResourcePath', {
-          current: 1,
-          size: 1,
-          resourceType: 'asideBackground',
-          status: true,
-        })
-        .then((res) => {
-          if (
-            !this.$common.isEmpty(res.data) &&
-            !this.$common.isEmpty(res.data.records) &&
-            res.data.records.length > 0
-          ) {
+      const res =  fyjk2
+      if (
+        !this.$common.isEmpty(res.data) &&
+        !this.$common.isEmpty(res.data.records) &&
+        res.data.records.length > 0
+      ) {
             const bgConfig = res.data.records[0]
             this.asideBackgroundImage = bgConfig.cover // 主背景
             this.asideExtraBackground = bgConfig.extraBackground || '' // 额外背景层（后端已解析）
-          }
-        })
-        .catch((error) => {
-          console.error('获取侧边栏背景失败:', error)
-        })
+      }
+      // return this.$http
+      //   .post(this.$constant.baseURL + '/webInfo/listResourcePath', {
+      //     current: 1,
+      //     size: 1,
+      //     resourceType: 'asideBackground',
+      //     status: true,
+      //   })
+      //   .then((res) => {
+      //     if (
+      //       !this.$common.isEmpty(res.data) &&
+      //       !this.$common.isEmpty(res.data.records) &&
+      //       res.data.records.length > 0
+      //     ) {
+      //       const bgConfig = res.data.records[0]
+      //       this.asideBackgroundImage = bgConfig.cover // 主背景
+      //       this.asideExtraBackground = bgConfig.extraBackground || '' // 额外背景层（后端已解析）
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     console.error('获取侧边栏背景失败:', error)
+      //   })
     },
     clearSearchHistory() {
       this.$confirm('确定要清空搜索历史记录吗?', '提示', {

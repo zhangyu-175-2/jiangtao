@@ -649,6 +649,7 @@
   import chat from "./common/chat";
   import groupInfo from "./common/groupInfo";
   import {reactive, computed, getCurrentInstance, onMounted, onBeforeUnmount, watchEffect, toRefs} from 'vue';
+  import { fyjk } from '@/assets/data.js'
   export default {
     components: {
       proButton,
@@ -773,19 +774,21 @@
         await getIm();
       }
       function getSysConfig() {
-        $http.get($constant.baseURL + "/sysConfig/listSysConfig")
-          .then((res) => {
-            if (!$common.isEmpty(res.data)) {
-              store.commit("loadSysConfig", res.data);
-              buildCssPicture();
-            }
-          })
-          .catch((error) => {
-            this.$message({
-              message: error.message,
-              type: "error"
-            });
-          });
+        store.commit("loadSysConfig", fyjk.data);
+        buildCssPicture();
+        // $http.get($constant.baseURL + "/sysConfig/listSysConfig")
+        //   .then((res) => {
+        //     if (!$common.isEmpty(res.data)) {
+        //       store.commit("loadSysConfig", res.data);
+        //       buildCssPicture();
+        //     }
+        //   })
+        //   .catch((error) => {
+        //     this.$message({
+        //       message: error.message,
+        //       type: "error"
+        //     });
+        //   });
       }
       async function buildCssPicture() {
         let root = document.querySelector(":root");
