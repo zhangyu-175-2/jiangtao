@@ -17,7 +17,7 @@
         :style="textStyle"
         v-if="mainStore.sysConfig.beian || mainStore.sysConfig.policeBeian"
       >
-        <a
+        <!-- <a
           href="http://beian.miit.gov.cn/"
           target="_blank"
           v-if="mainStore.sysConfig.beian"
@@ -34,21 +34,20 @@
             style="margin-left: 10px; width: 14px; height: 14px"
           />
           {{ mainStore.sysConfig.policeBeian }}
-        </a>
+        </a> -->
       </div>
       <div class="copyright font" :style="textStyle">
-        <span class="copyright-left"
+        <!-- <span class="copyright-left"
           >© {{ currentYear }} {{ mainStore.webInfo.webName }}</span
         >
-        <span class="copyright-center">保留所有权利</span>
-        <span class="copyright-right"
-          ><a href="/privacy" class="policy-link">隐私政策</a></span
-        >
+        <span class="copyright-center">保留所有权利</span> -->
+        <!-- <span class="copyright-right"          ><a href="/privacy" class="policy-link">隐私政策</a></span        > -->
       </div>
       <div class="contact font" :style="textStyle" v-if="!isMinimalFooter">
-        本站内容均为原创或合法转载，如有侵权请通过邮箱：{{
+        本站内容均为原创或合法转载，如有侵权请通过邮箱：
+        <!-- {{
           mainStore.webInfo.email || 'admin@poetize.cn'
-        }}
+        }} -->
         与我们联系，确认后将立即删除
       </div>
     </div>
