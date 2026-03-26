@@ -4,6 +4,7 @@ const ElMessageBox = { confirm: ElMessageBoxConfirm, prompt: ElMessageBoxPrompt 
 import { nextTick } from 'vue';
 import { message as ElMessage } from '@/utils/element-command-services';
 import { reactive, getCurrentInstance, onMounted, onBeforeUnmount, watchEffect, toRefs } from 'vue';
+import { fyjk4 } from '@/assets/data.js'
 export default function () {
   const globalProperties = getCurrentInstance().appContext.config.globalProperties;
   const $common = globalProperties.$common;
@@ -62,26 +63,38 @@ export default function () {
     });
   }
   function getWeiYan() {
-    $http.post($constant.baseURL + "/weiYan/listWeiYan", friendCircleData.pagination)
-      .then((res) => {
-        if (!$common.isEmpty(res.data)) {
-          res.data.records.forEach(c => {
-            c.content = c.content.replace(/\n{2,}/g, '<div style="height: 12px"></div>');
-            c.content = c.content.replace(/\n/g, '<br/>');
-            c.content = $common.faceReg(c.content);
-            c.content = $common.pictureReg(c.content);
-          });
-          friendCircleData.treeHoleList = friendCircleData.treeHoleList.concat(res.data.records);
-          friendCircleData.pagination.total = res.data.total;
-          friendCircleData.showFriendCircle = true;
-        }
-      })
-      .catch((error) => {
-        ElMessage({
-          message: error.message,
-          type: 'error'
-        });
+    const res = fyjk4
+    if (!$common.isEmpty(res.data)) {
+      res.data.records.forEach(c => {
+        c.content = c.content.replace(/\n{2,}/g, '<div style="height: 12px"></div>');
+        c.content = c.content.replace(/\n/g, '<br/>');
+        c.content = $common.faceReg(c.content);
+        c.content = $common.pictureReg(c.content);
       });
+      friendCircleData.treeHoleList = friendCircleData.treeHoleList.concat(res.data.records);
+      friendCircleData.pagination.total = res.data.total;
+      friendCircleData.showFriendCircle = true;
+    }
+    // $http.post($constant.baseURL + "/weiYan/listWeiYan", friendCircleData.pagination)
+    //   .then((res) => {
+    //     if (!$common.isEmpty(res.data)) {
+    //       res.data.records.forEach(c => {
+    //         c.content = c.content.replace(/\n{2,}/g, '<div style="height: 12px"></div>');
+    //         c.content = c.content.replace(/\n/g, '<br/>');
+    //         c.content = $common.faceReg(c.content);
+    //         c.content = $common.pictureReg(c.content);
+    //       });
+    //       friendCircleData.treeHoleList = friendCircleData.treeHoleList.concat(res.data.records);
+    //       friendCircleData.pagination.total = res.data.total;
+    //       friendCircleData.showFriendCircle = true;
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     ElMessage({
+    //       message: error.message,
+    //       type: 'error'
+    //     });
+    //   });
   }
   function submitWeiYan(content) {
     let weiYan = {

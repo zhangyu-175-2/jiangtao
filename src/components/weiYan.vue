@@ -61,6 +61,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import { useMainStore } from '@/stores/main'
+import { fyjk4 } from '@/assets/data.js'
 
 
 export default {
@@ -192,34 +193,52 @@ export default {
         })
     },
     getWeiYan() {
-      this.$http
-        .post(this.$constant.baseURL + '/weiYan/listWeiYan', this.pagination)
-        .then((res) => {
-          this.showFooter = false
-          if (!this.$common.isEmpty(res.data)) {
-            res.data.records.forEach((c) => {
-              c.content = c.content.replace(
-                /\n{2,}/g,
-                '<div style="height: 12px"></div>'
-              )
-              c.content = c.content.replace(/\n/g, '<br/>')
-              c.content = this.$common.faceReg(c.content)
-              c.content = this.$common.pictureReg(c.content)
-            })
-            this.treeHoleList = res.data.records
-            this.pagination.total = res.data.total
-          }
-          this.$nextTick(() => {
-            this.showFooter = true
-            this.$common.imgShow('.tree-hole-box .pictureReg')
-          })
+      const res = fyjk4
+      if (!this.$common.isEmpty(res.data)) {
+        res.data.records.forEach((c) => {
+          c.content = c.content.replace(
+            /\n{2,}/g,
+            '<div style="height: 12px"></div>'
+          )
+          c.content = c.content.replace(/\n/g, '<br/>')
+          c.content = this.$common.faceReg(c.content)
+          c.content = this.$common.pictureReg(c.content)
         })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+        this.treeHoleList = res.data.records
+        this.pagination.total = res.data.total
+      }
+      this.$nextTick(() => {
+        this.showFooter = true
+        this.$common.imgShow('.tree-hole-box .pictureReg')
+      })
+      // this.$http
+      //   .post(this.$constant.baseURL + '/weiYan/listWeiYan', this.pagination)
+      //   .then((res) => {
+      //     this.showFooter = false
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       res.data.records.forEach((c) => {
+      //         c.content = c.content.replace(
+      //           /\n{2,}/g,
+      //           '<div style="height: 12px"></div>'
+      //         )
+      //         c.content = c.content.replace(/\n/g, '<br/>')
+      //         c.content = this.$common.faceReg(c.content)
+      //         c.content = this.$common.pictureReg(c.content)
+      //       })
+      //       this.treeHoleList = res.data.records
+      //       this.pagination.total = res.data.total
+      //     }
+      //     this.$nextTick(() => {
+      //       this.showFooter = true
+      //       this.$common.imgShow('.tree-hole-box .pictureReg')
+      //     })
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
   },
 }

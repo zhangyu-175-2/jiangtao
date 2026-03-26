@@ -571,7 +571,7 @@
 import { defineAsyncComponent } from 'vue'
 import { useMainStore } from '@/stores/main'
 import { timeDiff, countdown as countdownUtil } from '@/utils/date-utils'
-import { fyjk2 } from '@/assets/data.js'
+import { fyjk2, fyjk4 } from '@/assets/data.js'
 
 
 export default {
@@ -937,36 +937,55 @@ export default {
       }
     },
     getWeiYan() {
-      this.$http
-        .post(
-          this.$constant.baseURL + '/weiYan/listWeiYan',
-          this.weiYanPagination
-        )
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            res.data.records.forEach((c) => {
-              c.content = c.content.replace(
-                /\n{2,}/g,
-                '<div style="height: 12px"></div>'
-              )
-              c.content = c.content.replace(/\n/g, '<br/>')
-              c.content = this.$common.faceReg(c.content)
-              c.content = this.$common.pictureReg(c.content)
-            })
-            this.treeHoleList = this.treeHoleList.concat(res.data.records)
-            this.weiYanPagination.total = res.data.total
-          }
-          this.$nextTick(() => {
-            this.$common.imgShow('#treeHole .pictureReg')
-          })
+      const res = fyjk4
+      if (!this.$common.isEmpty(res.data)) {
+        res.data.records.forEach((c) => {
+          c.content = c.content.replace(
+            /\n{2,}/g,
+            '<div style="height: 12px"></div>'
+          )
+          c.content = c.content.replace(/\n/g, '<br/>')
+          c.content = this.$common.faceReg(c.content)
+          c.content = this.$common.pictureReg(c.content)
         })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
-    },
+        this.treeHoleList = this.treeHoleList.concat(res.data.records)
+        this.weiYanPagination.total = res.data.total
+      }
+      this.$nextTick(() => {
+        this.$common.imgShow('#treeHole .pictureReg')
+      })
+      // this.$http
+      //   .post(
+      //     this.$constant.baseURL + '/weiYan/listWeiYan',
+      //     this.weiYanPagination
+      //   )
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       res.data.records.forEach((c) => {
+      //         c.content = c.content.replace(
+      //           /\n{2,}/g,
+      //           '<div style="height: 12px"></div>'
+      //         )
+      //         c.content = c.content.replace(/\n/g, '<br/>')
+      //         c.content = this.$common.faceReg(c.content)
+      //         c.content = this.$common.pictureReg(c.content)
+      //       })
+      //       this.treeHoleList = this.treeHoleList.concat(res.data.records)
+      //       this.weiYanPagination.total = res.data.total
+      //     }
+      //     this.$nextTick(() => {
+      //       this.$common.imgShow('#treeHole .pictureReg')
+      //     })
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
+    
+    
+      },
     deleteTreeHole(id) {
       if (this.$common.isEmpty(this.mainStore.currentUser)) {
         // 使用统一的登录跳转函数

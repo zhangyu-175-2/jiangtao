@@ -50,7 +50,7 @@
         }} -->
         与我们联系，确认后将立即删除
         <div class="icp font">本项目根据开源项目：<a
-          href="https://github.com/LeapYa/awesome-poetize-open"
+          href="https://github.com/River Billow/awesome-poetize-open"
           target="_blank"
           >Awesome-poetize-open</a
         >二创，特此鸣谢</div>

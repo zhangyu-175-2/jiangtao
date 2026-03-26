@@ -21,7 +21,8 @@
         >
           <img :src="$getDefaultAvatar()" />
         </el-avatar>
-        <div class="web-name">{{ webInfo.webName }}</div>
+        <!-- <div class="web-name">{{ webInfo.webName }}</div> -->
+        <div class="web-name">江涛</div>
         <div class="web-info">
           <div class="blog-info-box">
             <span>文章</span>
@@ -706,7 +707,7 @@ export default {
         "data": [
         {
             "id": 1,
-            "username": "LeapYa",
+            "username": "River Billow",
             "password": null,
             "phoneNumber": null,
             "email": null,

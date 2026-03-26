@@ -32,7 +32,7 @@ export var fyjk1 = {
     "message": null,
     "data": {
         "id": 1,
-        "webName": "LeapYa",
+        "webName": "River Billow",
         "webTitle": "LeapYaBlog",
         "siteAddress": "https://leapya.com",
         "notices": "[\"欢迎来到LeapYaBlog！\"]",
@@ -121,11 +121,11 @@ export var fyjk3 = {
                 "viewStatus": true,
                 "createTime": "2026-03-09 18:28:49",
                 "updateTime": "2026-03-21 16:03:33",
-                "updateBy": "LeapYa",
+                "updateBy": "River Billow",
                 "sortId": 2,
                 "labelId": 5,
                 "commentCount": 0,
-                "username": "LeapYa",
+                "username": "River Billow",
                 "sort": {
                     "id": 2,
                     "sortName": "Linux运维入门",
@@ -183,11 +183,11 @@ export var fyjk3 = {
                 "viewStatus": true,
                 "createTime": "2026-02-03 14:16:19",
                 "updateTime": "2026-02-06 00:04:37",
-                "updateBy": "LeapYa",
+                "updateBy": "River Billow",
                 "sortId": 3,
                 "labelId": 3,
                 "commentCount": 0,
-                "username": "LeapYa",
+                "username": "River Billow",
                 "sort": {
                     "id": 3,
                     "sortName": "白嫖教程",
@@ -256,3 +256,56 @@ export var fyjk3 = {
     "currentTimeMillis": 1774396542600,
     "success": true
 }
+export var fyjk4 = {
+  "code": 200,
+  "message": null,
+  "data": {
+    "records": [
+      {
+        "id": 2,
+        "userId": 1,
+        "likeCount": 0,
+        "content": "hh",
+        "isPublic": true,
+        "type": "friend",
+        "source": null,
+        "createTime": "2026-01-06 20:15:01"
+      },
+      {
+        "id": 1,
+        "userId": 1,
+        "likeCount": 0,
+        "content": "xx",
+        "isPublic": true,
+        "type": "friend",
+        "source": null,
+        "createTime": "2026-01-03 00:24:49"
+      }
+    ],
+    "total": 2,
+    "size": 10,
+    "current": 1,
+    "order": null,
+    "desc": true,
+    "source": null,
+    "commentType": null,
+    "floorCommentId": null,
+    "searchKey": null,
+    "articleSearch": null,
+    "recommendStatus": null,
+    "sortId": null,
+    "labelId": null,
+    "userStatus": null,
+    "userType": null,
+    "isThirdPartyUser": null,
+    "userId": null,
+    "resourceType": null,
+    "status": null,
+    "classify": null,
+    "pages": 1
+  },
+  "currentTimeMillis": 1774508354652,
+  "success": true
+}
+
+
