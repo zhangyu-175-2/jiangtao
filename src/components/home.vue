@@ -695,6 +695,14 @@ export default {
           order: 1,
           enabled: true,
         },
+        // {
+        //   name: '程序员导航',
+        //   icon: '👨‍💻',
+        //   link: '/',
+        //   type: 'internal',
+        //   order: 2,
+        //   enabled: true,
+        // },
         {
           name: '分类',
           icon: '📑',

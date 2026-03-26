@@ -307,11 +307,4 @@ export var fyjk4 = {
   "currentTimeMillis": 1774508354652,
   "success": true
 }
-export var fyjk5 = {
-  "code": 200,
-  "message": null,
-  "data": {},
-  "currentTimeMillis": 1774509261952,
-  "success": true
-}
 

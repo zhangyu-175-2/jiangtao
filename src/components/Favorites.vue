@@ -92,7 +92,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import { useMainStore } from '@/stores/main'
-import { fyjk5 } from '@/assets/data.js'
+import { favorites } from '@/assets/data-shoucang.js'
 
 
 export default {
@@ -127,7 +127,7 @@ export default {
       window.open(url)
     },
     getCollect() {
-      const res = fyjk5
+      const res = favorites
       if (!this.$common.isEmpty(res.data)) {
         this.collects = res.data
       }
