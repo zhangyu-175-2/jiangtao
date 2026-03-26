@@ -13,6 +13,7 @@ export function initParticleEffect() {
     }
 
     particleEffectPromise = ensurePluginSdk()
+    // 替换接口数据
       const res = {
         "code": 200,
         "message": null,

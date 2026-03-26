@@ -371,22 +371,31 @@ export default {
       this.getComments(this.pagination)
     },
     getTotal() {
-      this.$http
-        .get(this.$constant.baseURL + '/comment/getCommentCount', {
-          source: this.source,
-          type: this.type,
-        })
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.total = res.data
-          }
-        })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      // 替换接口数据
+      const res = {
+        "code": 200,
+        "data": 3,
+        "currentTimeMillis": 1774510274164
+      }
+      if (!this.$common.isEmpty(res.data)) {
+        this.total = res.data
+      }
+      // this.$http
+      //   .get(this.$constant.baseURL + '/comment/getCommentCount', {
+      //     source: this.source,
+      //     type: this.type,
+      //   })
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.total = res.data
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
     toChildPage(floorComment) {
       if (!floorComment.childComments.current) {
@@ -780,111 +789,276 @@ export default {
       isToPage = false,
       isLazyLoad = false
     ) {
-      this.$http
-        .post(this.$constant.baseURL + '/comment/listComment', pagination)
-        .then((res) => {
-          if (
-            !this.$common.isEmpty(res.data) &&
-            !this.$common.isEmpty(res.data.records)
-          ) {
-            if (this.$common.isEmpty(floorComment)) {
-              // 懒加载模式处理
-              if (isLazyLoad) {
-                // 追加新评论到现有列表
-                this.comments = this.comments.concat(res.data.records)
-                // 更新懒加载状态
-                this.hasMoreComments =
-                  res.data.records.length === pagination.size
-                this.isLoadingMore = false
-              } else {
-                // 初始加载或传统分页模式
-                // 在拿到新数据后再清空旧数据，避免网络延迟时评论区短暂变空
-                this.expandedComments = {}
-                this.comments = res.data.records
-                this.hasMoreComments =
-                  res.data.records.length === pagination.size
-                // 非懒加载模式下也要重置isLoadingMore状态
-                this.isLoadingMore = false
-              }
-              pagination.total = res.data.total
+      // 替换接口数据
+      const res = {
+        "code": 200,
+        "data": {
+    "records": [
+      {
+        "id": 189,
+        "source": 0,
+        "type": "message",
+        "parentCommentId": 0,
+        "userId": 3740,
+        "likeCount": 0,
+        "commentContent": "博主是女孩吗？",
+        "createTime": "2026-02-28 17:25:49",
+        "childComments": {
+          "records": [],
+          "total": 0,
+          "size": 5,
+          "current": 1,
+          "pages": 0
+        },
+        "username": "wechat_mp_edfbef6bf9",
+        "avatar": "https://image.lolimi.cn/2025/12/14/693ec7e5eb725.png",
+        "userLv": 1,
+        "createTimeLv": "化神"
+      },
+      {
+        "id": 160,
+        "source": 0,
+        "type": "message",
+        "parentCommentId": 0,
+        "userId": 3474,
+        "likeCount": 0,
+        "commentContent": "紫色",
+        "createTime": "2026-02-25 15:37:57",
+        "childComments": {
+          "records": [],
+          "total": 0,
+          "size": 5,
+          "current": 1,
+          "pages": 0
+        },
+        "username": "qq_风间琉璃309327",
+        "avatar": "https://image.lolimi.cn/2025/12/14/693ec7eb3d346.png",
+        "userLv": 1,
+        "createTimeLv": "化神"
+      },
+      {
+        "id": 3,
+        "source": 0,
+        "type": "message",
+        "parentCommentId": 0,
+        "userId": 18,
+        "likeCount": 0,
+        "commentContent": "帅是种感觉",
+        "createTime": "2025-12-15 21:38:57",
+        "childComments": {
+          "records": [],
+          "total": 0,
+          "size": 5,
+          "current": 1,
+          "pages": 0
+        },
+        "username": "jokerui",
+        "avatar": "/static/userAvatar/11765184369858848.png",
+        "userLv": 1,
+        "createTimeLv": "合体"
+      }
+    ],
+    "total": 3,
+    "size": 10,
+    "current": 1,
+    "desc": true,
+    "commentType": "message",
+    "source": 0,
+    "pages": 1
+        },
+        "currentTimeMillis": 1774510274134
+      }
+      if (
+        !this.$common.isEmpty(res.data) &&
+        !this.$common.isEmpty(res.data.records)
+      ) {
+        if (this.$common.isEmpty(floorComment)) {
+    // 懒加载模式处理
+    if (isLazyLoad) {
+      // 追加新评论到现有列表
+      this.comments = this.comments.concat(res.data.records)
+      // 更新懒加载状态
+      this.hasMoreComments =
+        res.data.records.length === pagination.size
+      this.isLoadingMore = false
+    } else {
+      // 初始加载或传统分页模式
+      // 在拿到新数据后再清空旧数据，避免网络延迟时评论区短暂变空
+      this.expandedComments = {}
+      this.comments = res.data.records
+      this.hasMoreComments =
+        res.data.records.length === pagination.size
+      // 非懒加载模式下也要重置isLoadingMore状态
+      this.isLoadingMore = false
+    }
+    pagination.total = res.data.total
 
-              this.processMainComments(
-                isLazyLoad ? res.data.records : this.comments
-              )
-              this.emoji(isLazyLoad ? res.data.records : this.comments, true)
-            } else {
-              if (isToPage === false) {
-                const newReplies = res.data.records
-                newReplies.sort(
-                  (a, b) => new Date(a.createTime) - new Date(b.createTime)
-                )
+    this.processMainComments(
+      isLazyLoad ? res.data.records : this.comments
+    )
+    this.emoji(isLazyLoad ? res.data.records : this.comments, true)
+        } else {
+    if (isToPage === false) {
+      const newReplies = res.data.records
+      newReplies.sort(
+        (a, b) => new Date(a.createTime) - new Date(b.createTime)
+      )
 
-                floorComment.flatReplies = newReplies
-                floorComment.totalReplies = res.data.total
-                floorComment.childComments = {
-                  records: [],
-                  total: res.data.total,
-                }
+      floorComment.flatReplies = newReplies
+      floorComment.totalReplies = res.data.total
+      floorComment.childComments = {
+        records: [],
+        total: res.data.total,
+      }
 
-                this.expandedComments[floorComment.id] = {
-                  expanded: true,
-                  displayCount: Math.min(this.pageSize, newReplies.length),
-                }
-              } else {
-                const newReplies = res.data.records
+      this.expandedComments[floorComment.id] = {
+        expanded: true,
+        displayCount: Math.min(this.pageSize, newReplies.length),
+      }
+    } else {
+      const newReplies = res.data.records
 
-                floorComment.flatReplies =
-                  floorComment.flatReplies.concat(newReplies)
-                floorComment.flatReplies.sort(
-                  (a, b) => new Date(a.createTime) - new Date(b.createTime)
-                )
-                floorComment.totalReplies = res.data.total // 使用服务器返回的总数
-                floorComment.childComments.total = res.data.total
+      floorComment.flatReplies =
+        floorComment.flatReplies.concat(newReplies)
+      floorComment.flatReplies.sort(
+        (a, b) => new Date(a.createTime) - new Date(b.createTime)
+      )
+      floorComment.totalReplies = res.data.total // 使用服务器返回的总数
+      floorComment.childComments.total = res.data.total
 
-                // 更新展开状态，显示更多回复
-                const currentState = this.expandedComments[floorComment.id]
-                this.expandedComments[floorComment.id] = {
-                  expanded: true,
-                  displayCount: Math.min(
-                    currentState.displayCount + this.pageSize,
-                    floorComment.flatReplies.length
-                  ),
-                }
-              }
-              this.emoji(floorComment.flatReplies, false)
-            }
-            this.$nextTick(() => {
-              this.$common.imgShow('#comment-content .pictureReg')
-            })
-          } else {
-            // 即使没有评论数据，也要重置isLoadingMore状态
-            if (this.$common.isEmpty(floorComment)) {
-              this.isLoadingMore = false
-              this.hasMoreComments = false
-              // 非懒加载模式下接口返回空，才清掉旧评论（正常换页/切文章场景）
-              if (!isLazyLoad) {
-                this.expandedComments = {}
-                this.comments = []
-              }
-            }
-          }
-        })
-        .catch((error) => {
-          // 懒加载错误处理
-          if (isLazyLoad) {
-            this.isLoadingMore = false
-            this.pagination.current -= 1 // 回退页码
-            this.$message({
-              message: '加载更多评论失败：' + error.message,
-              type: 'error',
-            })
-          } else {
-            this.$message({
-              message: error.message,
-              type: 'error',
-            })
-          }
-        })
+      // 更新展开状态，显示更多回复
+      const currentState = this.expandedComments[floorComment.id]
+      this.expandedComments[floorComment.id] = {
+        expanded: true,
+        displayCount: Math.min(
+          currentState.displayCount + this.pageSize,
+          floorComment.flatReplies.length
+        ),
+      }
+    }
+    this.emoji(floorComment.flatReplies, false)
+        }
+        this.$nextTick(() => {
+    this.$common.imgShow('#comment-content .pictureReg')
+  })
+      } else {
+  // 即使没有评论数据，也要重置isLoadingMore状态
+  if (this.$common.isEmpty(floorComment)) {
+    this.isLoadingMore = false
+    this.hasMoreComments = false
+    // 非懒加载模式下接口返回空，才清掉旧评论（正常换页/切文章场景）
+    if (!isLazyLoad) {
+      this.expandedComments = {}
+      this.comments = []
+    }
+  }
+      }
+
+    //   this.$http
+    //     .post(this.$constant.baseURL + '/comment/listComment', pagination)
+    //     .then((res) => {
+    //        if (
+    //     !this.$common.isEmpty(res.data) &&
+    //     !this.$common.isEmpty(res.data.records)
+    //   ) {
+    //     if (this.$common.isEmpty(floorComment)) {
+    // // 懒加载模式处理
+    // if (isLazyLoad) {
+    //   // 追加新评论到现有列表
+    //   this.comments = this.comments.concat(res.data.records)
+    //   // 更新懒加载状态
+    //   this.hasMoreComments =
+    //     res.data.records.length === pagination.size
+    //   this.isLoadingMore = false
+    // } else {
+    //   // 初始加载或传统分页模式
+    //   // 在拿到新数据后再清空旧数据，避免网络延迟时评论区短暂变空
+    //   this.expandedComments = {}
+    //   this.comments = res.data.records
+    //   this.hasMoreComments =
+    //     res.data.records.length === pagination.size
+    //   // 非懒加载模式下也要重置isLoadingMore状态
+    //   this.isLoadingMore = false
+    // }
+    // pagination.total = res.data.total
+
+    //           this.processMainComments(
+    //             isLazyLoad ? res.data.records : this.comments
+    //           )
+    //           this.emoji(isLazyLoad ? res.data.records : this.comments, true)
+    //         } else {
+    //           if (isToPage === false) {
+    //             const newReplies = res.data.records
+    //             newReplies.sort(
+    //               (a, b) => new Date(a.createTime) - new Date(b.createTime)
+    //             )
+
+    //             floorComment.flatReplies = newReplies
+    //             floorComment.totalReplies = res.data.total
+    //             floorComment.childComments = {
+    //               records: [],
+    //               total: res.data.total,
+    //             }
+
+    //             this.expandedComments[floorComment.id] = {
+    //               expanded: true,
+    //               displayCount: Math.min(this.pageSize, newReplies.length),
+    //             }
+    //           } else {
+    //             const newReplies = res.data.records
+
+    //             floorComment.flatReplies =
+    //               floorComment.flatReplies.concat(newReplies)
+    //             floorComment.flatReplies.sort(
+    //               (a, b) => new Date(a.createTime) - new Date(b.createTime)
+    //             )
+    //             floorComment.totalReplies = res.data.total // 使用服务器返回的总数
+    //             floorComment.childComments.total = res.data.total
+
+    //             // 更新展开状态，显示更多回复
+    //             const currentState = this.expandedComments[floorComment.id]
+    //             this.expandedComments[floorComment.id] = {
+    //               expanded: true,
+    //               displayCount: Math.min(
+    //                 currentState.displayCount + this.pageSize,
+    //                 floorComment.flatReplies.length
+    //               ),
+    //             }
+    //           }
+    //           this.emoji(floorComment.flatReplies, false)
+    //         }
+    //         this.$nextTick(() => {
+    //           this.$common.imgShow('#comment-content .pictureReg')
+    //         })
+    //       } else {
+    //         // 即使没有评论数据，也要重置isLoadingMore状态
+    //         if (this.$common.isEmpty(floorComment)) {
+    //           this.isLoadingMore = false
+    //           this.hasMoreComments = false
+    //           // 非懒加载模式下接口返回空，才清掉旧评论（正常换页/切文章场景）
+    //           if (!isLazyLoad) {
+    //             this.expandedComments = {}
+    //             this.comments = []
+    //           }
+    //         }
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       // 懒加载错误处理
+    //       if (isLazyLoad) {
+    //         this.isLoadingMore = false
+    //         this.pagination.current -= 1 // 回退页码
+    //         this.$message({
+    //           message: '加载更多评论失败：' + error.message,
+    //           type: 'error',
+    //         })
+    //       } else {
+    //         this.$message({
+    //           message: error.message,
+    //           type: 'error',
+    //         })
+    //       }
+    //     })
     },
     addGraffitiComment(graffitiComment) {
       this.submitComment(graffitiComment)

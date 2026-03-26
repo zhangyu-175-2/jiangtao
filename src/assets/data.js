@@ -54,19 +54,19 @@ export var fyjk1 = {
         "apiEnabled": true,
         "apiKey": "986b60884b834e6fa5ca278eaefbd9ed04f97889",
         "apiIpWhitelist": "",
-        "navConfig": "[{\"name\":\"首页\",\"icon\":\"🏡\",\"link\":\"/\",\"type\":\"internal\",\"order\":1,\"enabled\":true},{\"name\":\"分类\",\"icon\":\"📑\",\"link\":\"#\",\"type\":\"dropdown\",\"order\":2,\"enabled\":true},{\"name\":\"家\",\"icon\":\"❤️‍🔥\",\"link\":\"/love\",\"type\":\"internal\",\"order\":3,\"enabled\":false},{\"name\":\"友人帐\",\"icon\":\"🤝\",\"link\":\"/friends\",\"type\":\"internal\",\"order\":4,\"enabled\":true},{\"name\":\"曲乐\",\"icon\":\"🎵\",\"link\":\"/music\",\"type\":\"internal\",\"order\":5,\"enabled\":false},{\"name\":\"收藏夹\",\"icon\":\"📁\",\"link\":\"/favorites\",\"type\":\"internal\",\"order\":6,\"enabled\":true},{\"name\":\"留言\",\"icon\":\"📪\",\"link\":\"/message\",\"type\":\"internal\",\"order\":7,\"enabled\":false},{\"name\":\"联系我\",\"icon\":\"💬\",\"link\":\"#chat\",\"type\":\"special\",\"order\":8,\"enabled\":false}]",
-        "footerBackgroundImage": "/static/footerBackground/LeapYa11769938676683170.webp",
-        "footerBackgroundConfig": "{\"backgroundSize\":\"cover\",\"backgroundPosition\":\"center center\",\"backgroundRepeat\":\"no-repeat\",\"opacity\":45,\"textShadow\":false,\"maskColor\":\"rgba(0, 0, 0, 0.45)\"}",
-        "email": "hi@leapya.com",
-        "minimalFooter": false,
-        "enableAutoNight": false,
-        "autoNightStart": 23,
-        "autoNightEnd": 7,
-        "enableGrayMode": false,
-        "enableDynamicTitle": true,
-        "mouseClickEffect": "text",
-        "mouseClickEffectConfig": null,
-        "mobileDrawerConfig": "{\"titleType\":\"text\",\"titleText\":\"欢迎光临\",\"avatarSize\":100,\"backgroundType\":\"image\",\"backgroundImage\":\"/assets/toolbar.jpg\",\"backgroundColor\":\"#000000\",\"backgroundGradient\":\"linear-gradient(60deg, #ffd7e4, #c8f1ff 95%)\",\"maskOpacity\":0.55,\"menuFontColor\":\"#ffffff\",\"showBorder\":true,\"borderColor\":\"rgba(255, 255, 255, 0.15)\",\"showSnowflake\":true}"
+        // "navConfig": "[{\"name\":\"首页\",\"icon\":\"🏡\",\"link\":\"/\",\"type\":\"internal\",\"order\":1,\"enabled\":true},{\"name\":\"分类\",\"icon\":\"📑\",\"link\":\"#\",\"type\":\"dropdown\",\"order\":2,\"enabled\":true},{\"name\":\"家\",\"icon\":\"❤️‍🔥\",\"link\":\"/love\",\"type\":\"internal\",\"order\":3,\"enabled\":false},{\"name\":\"友人帐\",\"icon\":\"🤝\",\"link\":\"/friends\",\"type\":\"internal\",\"order\":4,\"enabled\":true},{\"name\":\"曲乐\",\"icon\":\"🎵\",\"link\":\"/music\",\"type\":\"internal\",\"order\":5,\"enabled\":false},{\"name\":\"收藏夹\",\"icon\":\"📁\",\"link\":\"/favorites\",\"type\":\"internal\",\"order\":6,\"enabled\":true},{\"name\":\"留言\",\"icon\":\"📪\",\"link\":\"/message\",\"type\":\"internal\",\"order\":7,\"enabled\":false},{\"name\":\"联系我\",\"icon\":\"💬\",\"link\":\"#chat\",\"type\":\"special\",\"order\":8,\"enabled\":false}]",
+        // "footerBackgroundImage": "/static/footerBackground/LeapYa11769938676683170.webp",
+        // "footerBackgroundConfig": "{\"backgroundSize\":\"cover\",\"backgroundPosition\":\"center center\",\"backgroundRepeat\":\"no-repeat\",\"opacity\":45,\"textShadow\":false,\"maskColor\":\"rgba(0, 0, 0, 0.45)\"}",
+        // "email": "hi@leapya.com",
+        // "minimalFooter": false,
+        // "enableAutoNight": false,
+        // "autoNightStart": 23,
+        // "autoNightEnd": 7,
+        // "enableGrayMode": false,
+        // "enableDynamicTitle": true,
+        // "mouseClickEffect": "text",
+        // "mouseClickEffectConfig": null,
+        // "mobileDrawerConfig": "{\"titleType\":\"text\",\"titleText\":\"欢迎光临\",\"avatarSize\":100,\"backgroundType\":\"image\",\"backgroundImage\":\"/assets/toolbar.jpg\",\"backgroundColor\":\"#000000\",\"backgroundGradient\":\"linear-gradient(60deg, #ffd7e4, #c8f1ff 95%)\",\"maskOpacity\":0.55,\"menuFontColor\":\"#ffffff\",\"showBorder\":true,\"borderColor\":\"rgba(255, 255, 255, 0.15)\",\"showSnowflake\":true}"
     },
     "currentTimeMillis": 1774346142992,
     "success": true
@@ -307,5 +307,11 @@ export var fyjk4 = {
   "currentTimeMillis": 1774508354652,
   "success": true
 }
-
+export var fyjk5 = {
+  "code": 200,
+  "message": null,
+  "data": {},
+  "currentTimeMillis": 1774509261952,
+  "success": true
+}
 

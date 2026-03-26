@@ -10,12 +10,12 @@
       @mouseenter="handleDanmakuMouseEnter(item)"
       @mouseleave="handleDanmakuMouseLeave(item)"
     >
-      <img
+      <!-- <img
         :src="item.avatarUrl"
         class="danmaku-avatar"
         @error="handleImageError"
         alt="avatar"
-      />
+      /> -->
       <span class="danmaku-msg">{{ item.msg }}</span>
     </div>
   </div>

@@ -92,6 +92,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import { useMainStore } from '@/stores/main'
+import { fyjk5 } from '@/assets/data.js'
 
 
 export default {
@@ -126,19 +127,23 @@ export default {
       window.open(url)
     },
     getCollect() {
-      this.$http
-        .get(this.$constant.baseURL + '/webInfo/listCollect')
-        .then((res) => {
-          if (!this.$common.isEmpty(res.data)) {
-            this.collects = res.data
-          }
-        })
-        .catch((error) => {
-          this.$message({
-            message: error.message,
-            type: 'error',
-          })
-        })
+      const res = fyjk5
+      if (!this.$common.isEmpty(res.data)) {
+        this.collects = res.data
+      }
+      // this.$http
+      //   .get(this.$constant.baseURL + '/webInfo/listCollect')
+      //   .then((res) => {
+      //     if (!this.$common.isEmpty(res.data)) {
+      //       this.collects = res.data
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.$message({
+      //       message: error.message,
+      //       type: 'error',
+      //     })
+      //   })
     },
   },
 }
