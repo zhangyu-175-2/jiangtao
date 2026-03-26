@@ -716,7 +716,7 @@ export default {
             "openId": null,
             "platformType": null,
             "uid": null,
-            "avatar": "/static/userAvatar/LeapYa11769844514200796.webp",
+            "avatar": "/static/userAvatar/RiverBillow11769844514200796.webp",
             "admire": "",
             "subscribe": null,
             "introduction": null,
