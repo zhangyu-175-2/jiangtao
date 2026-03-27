@@ -544,3 +544,150 @@ export var favorites = {
     },
     "currentTimeMillis": 1774517155928
 }
+export var favorites1 =[
+  {
+    "name": "Linux命令大全",
+    "icon": "./static/img/index/tool/redhat.png",
+    "url": "https://www.linuxcool.com/"
+  },
+  {
+    "name": "jQuery 速查表",
+    "icon": "./static/img/index/tool/jQuery.ico",
+    "url": "http://hemin.cn/jq/"
+  },
+  {
+    "name": "正则表达式测试",
+    "icon": "./static/img/index/tool/oschina.ico",
+    "url": "https://tool.oschina.net/regex/"
+  },
+  {
+    "name": "IP地址查询",
+    "icon": "./static/img/index/tool/ip.png",
+    "url": "https://tool.lu/ip/"
+  },
+  {
+    "name": "图片base64编码",
+    "icon": "./static/img/index/tool/base64.png",
+    "url": "https://tool.lu/base64image/"
+  },
+  {
+    "name": "在线代码测试",
+    "icon": "./static/img/index/tool/code.png",
+    "url": "https://tool.lu/coderunner/"
+  },
+  {
+    "name": "在线文本对比",
+    "icon": "./static/img/favicon.ico",
+    "url": "tool/word_compare.html"
+  },
+  {
+    "name": "进制转换",
+    "icon": "./static/img/favicon.ico",
+    "url": "tool/binary.html"
+  },
+  {
+    "name": "下载链接转换工具",
+    "icon": "./static/img/index/tool/down.png",
+    "url": "https://tool.lu/urlconvert/"
+  },
+  {
+    "name": "网上计算器",
+    "icon": "./static/img/index/tool/cal.png",
+    "url": "http://cal.apple886.com/"
+  },
+  {
+    "name": "curl命令转代码",
+    "icon": "./static/img/index/tool/curl.png",
+    "url": "https://tool.lu/curl/"
+  },
+  {
+    "name": "中文简繁体转换",
+    "icon": "./static/img/index/tool/zf.png",
+    "url": "https://tool.lu/zhconvert"
+  },
+  {
+    "name": "数字大写转换器",
+    "icon": "./static/img/index/tool/dx.png",
+    "url": "https://tool.gaodun.com/rmb.html"
+  },
+  {
+    "name": "二维码制作工具",
+    "icon": "./static/img/index/tool/er.png",
+    "url": "https://cli.im/"
+  },
+  {
+    "name": "加密解密",
+    "icon": "./static/img/index/tech/oschina.ico",
+    "url": "https://tool.oschina.net/encrypt"
+  },
+  {
+    "name": "Cron表达式",
+    "icon": "./static/img/index/tool/cron.png",
+    "url": "https://www.matools.com/cron/"
+  },
+  {
+    "name": "在线PS",
+    "icon": "./static/img/index/tool/ps.png",
+    "url": "https://pixlr.com/cn/x/"
+  },
+  {
+    "name": "在线收藏网址",
+    "icon": "./static/img/index/tool/favorites.png",
+    "url": "http://favorites.ren/"
+  },
+  {
+    "name": "百度翻译",
+    "icon": "./static/img/index/tool/bf.ico",
+    "url": "https://fanyi.baidu.com/translate"
+  },
+  {
+    "name": "谷歌翻译",
+    "icon": "./static/img/index/tool/gf.png",
+    "url": "https://translate.google.cn/"
+  },
+  {
+    "name": "DeepL翻译",
+    "icon": "./static/img/index/tool/deepl.jpg",
+    "url": "https://www.deepl.com/translator"
+  },
+  {
+    "name": "字数统计",
+    "icon": "./static/img/index/resources/wd.ico",
+    "url": "https://www.eteste.com/"
+  },
+  {
+    "name": "文件格式转换",
+    "icon": "./static/img/index/tool/convertio.ico",
+    "url": "https://convertio.co/zh/"
+  },
+  {
+    "name": "公众号",
+    "icon": "./static/img/index/media/wx.ico",
+    "url": "https://mp.weixin.qq.com/"
+  },
+  {
+    "name": "颜色转化器",
+    "icon": "./static/img/index/tool/sioe.ico",
+    "url": "https://www.sioe.cn/yingyong/yanse-rgb-16/"
+  },
+  {
+    "name": "文章同步助手",
+    "icon": "./static/img/index/tool/wechatsync.jpg",
+    "url": "https://www.wechatsync.com/"
+  },
+  {
+    "name": "时间戳转换 (Unix-北京)",
+    "icon": "./static/img/index/tool/timestamp.png",
+    "url": "https://tool.lu/timestamp/"
+  },
+  {
+    "name": "时间戳转换 (Unix-GMT，批量)",
+    "icon": "./static/img/index/tool/epochConverter.jpg",
+    "url": "https://www.epochconverter.com/"
+  },
+  {
+    "name": "字母大小写转换",
+    "icon": "./static/img/index/tool/dx.png",
+    "url": "http://www.wetools.com/text-case-convert/a9c2e510d3a2d0e5add9b68a27086b9e"
+  }
+]

@@ -36,6 +36,35 @@
       <!-- 内容 -->
       <div class="favorites-content">
         <!-- 收藏夹 -->
+        <div class="collect-classify">常用工具</div>
+        <ul 
+          align="left" 
+          style="display: flex;flex-wrap: wrap;margin-left: 26px;"
+        >
+          <!-- 循环渲染工具列表 -->
+          <li v-for="(item, index) in toolList" :key="index">
+            <img 
+               :src="getAssetUrl(item.icon)"
+              width="16"
+              alt="item.name"
+            >&nbsp;
+            <a 
+              :href="item.url"
+              style="color:#444 !important"
+              target="_blank"
+              v-if="!item.onclick"
+            >
+              {{ item.name }}
+            </a>
+            <a 
+              :href="item.url"
+              style="color:#444 !important"
+              v-else
+            >
+              {{ item.name }}
+            </a>
+          </li>
+        </ul>
         <div v-if="!$common.isEmpty(collects)" class="my-animation-hideToShow">
           <div
             v-for="(value, key) in collects"
@@ -92,7 +121,8 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import { useMainStore } from '@/stores/main'
-import { favorites } from '@/assets/data-shoucang.js'
+import { favorites,favorites1 } from '@/assets/data-shoucang.js'
+
 
 
 export default {
@@ -103,6 +133,7 @@ export default {
   data() {
     return {
       collects: {},
+      toolList:favorites1
     }
   },
 
@@ -123,6 +154,9 @@ export default {
   mounted() {},
 
   methods: {
+    getAssetUrl(path) {
+      return new URL(`${path}`, import.meta.url).href
+    },
     toUrl(url) {
       window.open(url)
     },
@@ -150,6 +184,32 @@ export default {
 </script>
 
 <style scoped>
+.favorites-content {
+  ul{
+    list-style-type: none;
+    width: 100%;
+    li{
+      float: left;
+      width: 16.6%;
+      text-align: left;
+      display: flex;
+      margin-bottom: 3px;
+      a{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      img{
+        width: 16px;
+        position: relative;
+        top: 7px;
+        height: 17px;
+      }
+    }
+  }
+}
 .favorites-container {
   padding: 25px;
   background: var(--favoriteBg);
@@ -195,6 +255,19 @@ export default {
   box-shadow: 0 8px 16px -4px #2c2d300c;
   transform: translateZ(0);
   background: var(--background);
+   background:linear-gradient(to right,
+            #ffb7c5 0%,
+            #6ec3e8 25%,
+            #c79be0 65%,
+            #7fcdcd 100%
+        ),
+        linear-gradient(to bottom,
+            #ffffff 0%,
+            #ffb7c5 2%,
+            #6ec3e8 30%,
+            #c79be0 70%,
+            #7fcdcd 100%
+        );
   display: flex;
   width: calc(100% / 4 - 20px);
   max-width: 320px;
@@ -205,7 +278,8 @@ export default {
   margin: 10px;
 }
 .favorite-item:hover {
-  background: #425aef;
+  /* background: #425aef; */
+  background: #97a3f3;
   color: var(--white);
 }
 .favorite-item:hover .favorite-item-image {
@@ -224,7 +298,8 @@ export default {
   will-change: width, height, opacity;
 }
 .favorite-item-title {
-  font-size: 19px;
+  /* font-size: 19px; */
+  font-size: 16px;
   font-weight: bold;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -235,7 +310,8 @@ export default {
   opacity: 0.7;
   font-weight: bold;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 10px;
+  /* font-size: 14px; */
   line-height: 1.2;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -801,7 +801,7 @@ export default {
         "parentCommentId": 0,
         "userId": 3740,
         "likeCount": 0,
-        "commentContent": "博主是女孩吗？",
+        "commentContent": "是内心的笃定，也是生活最温柔的力量。✨",
         "createTime": "2026-02-28 17:25:49",
         "childComments": {
           "records": [],
