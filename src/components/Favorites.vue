@@ -39,7 +39,7 @@
         <div class="collect-classify">常用工具</div>
         <ul 
           align="left" 
-          style="display: flex;flex-wrap: wrap;margin-left: 26px;"
+          style="display: flex;flex-wrap: wrap;margin-left: 4px;"
         >
           <!-- 循环渲染工具列表 -->
           <li v-for="(item, index) in toolList" :key="index">
@@ -81,13 +81,19 @@
                 @click="toUrl(item.url)"
                 class="favorite-item"
               >
-                <div>
+                <div style="margin-top: 4px;">
                   <el-avatar
+                    class="favorite-item-image"
+                    :size="40"
+                    :src="getImageSrc(item.cover)"
+                  >
+                  </el-avatar>
+                  <!-- <el-avatar
                     class="favorite-item-image"
                     :size="60"
                     :src="item.cover"
                   >
-                  </el-avatar>
+                  </el-avatar> -->
                 </div>
                 <div style="width: calc(100% - 80px)">
                   <div class="favorite-item-title">
@@ -157,6 +163,14 @@ export default {
     getAssetUrl(path) {
       return new URL(`${path}`, import.meta.url).href
     },
+    getImageSrc(cover) {
+      if (cover.startsWith('http://') || cover.startsWith('https://')) {
+        return cover;
+      }
+      else {
+        return new URL(`${cover}`, import.meta.url).href
+      }
+    },
     toUrl(url) {
       window.open(url)
     },
@@ -188,18 +202,24 @@ export default {
   ul{
     list-style-type: none;
     width: 100%;
-    li{
+    padding: 0 0 0 10px !important;
+     li{
       float: left;
       width: 16.6%;
       text-align: left;
       display: flex;
       margin-bottom: 3px;
+      padding: 0 !important;
+      min-width: 150px;
       a{
+        font-family: "Microsoft Yahei", SimSun, sans-serif !important;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box !important;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
+        line-height: 32px;
+        font-size: 16px;
       }
       img{
         width: 16px;
@@ -269,11 +289,14 @@ export default {
             #7fcdcd 100%
         );
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: calc(100% / 4 - 20px);
   max-width: 320px;
-  height: 90px;
+  height: 70px;
+
   overflow: hidden;
-  padding: 15px;
+  /* padding: 15px; */
   cursor: pointer;
   margin: 10px;
 }
@@ -283,11 +306,12 @@ export default {
   color: var(--white);
 }
 .favorite-item:hover .favorite-item-image {
-  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+  transition: width 0.8s ease, height 0.6s ease, opacity 0.6s ease;
   width: 0 !important;
   height: 0 !important;
   opacity: 0;
   margin-right: 0;
+  margin-left: 20px;
 }
 .favorite-item:hover div:nth-child(2) {
   width: 100% !important;
