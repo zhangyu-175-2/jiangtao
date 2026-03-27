@@ -141,6 +141,16 @@ const routes = [
     component: () => import('../components/Forbidden'),
   },
   {
+    path: '/demo',
+    name: 'demo',
+    component: () => import('../components/demo'),
+  },
+  {
+    path: '/urlNav',
+    name: 'urlNav',
+    component: () => import('../components/urlNav'),
+  },
+  {
     path: '/404',
     name: 'notFound',
     component: () => import('../components/NotFound'),
