@@ -20,7 +20,7 @@
           @mouseleave="handleAvatarLeave"
         >
           <!-- <img :src="$getDefaultAvatar()" /> -->
-          <img src="@/assets/image/touxiang.png" />
+          <img src="/image/touxiang.png" />
         </el-avatar>
         <!-- <div class="web-name">{{ webInfo.webName }}</div> -->
         <div class="web-name">江涛</div>
