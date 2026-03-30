@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]  # 推送到 main 就自动部署
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -12,6 +12,9 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages  # 👈 关键：添加这两行
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,4 +37,5 @@ jobs:
           path: ./dist
 
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4
