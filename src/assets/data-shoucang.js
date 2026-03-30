@@ -1,7 +1,7 @@
 export var favorites = {
   "code": 200,
   "data": {
-    "AI工具": [
+    "AI工具 ": [
       {
         "id": 359,
         "title": "GPT-4",
