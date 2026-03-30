@@ -831,6 +831,6 @@ export var favorites1 = [
   {
     "name": "更多导航",
     "icon": "/image/daohang/code.png",
-    "url": "/urlNav"
+    "url": "/#/urlNav"
   },
 ]

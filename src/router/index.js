@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import { useMainStore } from '../stores/main'
 import constant from '../utils/constant'
 import common from '../utils/common'
@@ -164,7 +164,7 @@ const routes = [
 
 const router = createRouter({
   // history: createWebHistory(),
-  history: createWebHashHistory("/jiangtao/"),
+  history: createWebHashHistory(),
   routes: routes,
   scrollBehavior(to, from, savedPosition) {
     return { left: 0, top: 0 }
