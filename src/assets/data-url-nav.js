@@ -90,7 +90,7 @@ export const dataUrlNav = {
       "id": "ai",
       "title": "🤖 AI 工具合集",
       "cards": [
-        { "icon": "/image/daohang/doubao.png", "title": "ChatGPT", "desc": "通用AI对话、写作、编程辅助", "url": "https://chat.openai.com/" },
+        { "icon": "/image/daohang/openai.png", "title": "ChatGPT", "desc": "通用AI对话、写作、编程辅助", "url": "https://chat.openai.com/" },
         { "icon": "🎨", "title": "Midjourney", "desc": "AI绘画、设计、海报生成", "url": "https://www.midjourney.com/" },
         { "icon": "/image/daohang/doubao.png", "title": "豆包", "desc": "国产AI，写作、总结、答疑", "url": "https://www.doubao.com/" },
         { "icon": "🔊", "title": "ElevenLabs", "desc": "AI真人语音合成", "url": "https://elevenlabs.io/" },
