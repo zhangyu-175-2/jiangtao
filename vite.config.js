@@ -348,5 +348,6 @@ export default defineConfig({
       'element-plus',
       'axios'
     ]
-  }
+  },
+    base: '/jiangtao/',
 })
