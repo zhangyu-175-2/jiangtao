@@ -1,19 +1,16 @@
 export const dataUrlNav = {
   "menuItems": [
+    { "label": "常用", "key": "often" },
     { "label": "英语学习", "key": "english" },
-    { "label": "前端开发", "key": "frontend" },
-    { "label": "程序员工具", "key": "programmer" },
+    { "label": "优秀开源项目", "key": "Excellent-open-source-project" },
     { "label": "跨境电商", "key": "crossborder" },
-    { "label": "AI工具合集", "key": "ai" },
-    { "label": "设计资源", "key": "design" },
-    { "label": "编程自学", "key": "study" },
-    { "label": "实用工具", "key": "tools" },
-    { "label": "求职面试", "key": "job" },
+    { "label": "跨境电商网络", "key": "network" },
+    { "label": "前端开发", "key": "frontend" },
     { "label": "AI工具", "key": "ai-tools" },
-    { "label": "前端开发拓展", "key": "frontend-extension" },
+    { "label": "程序员工具", "key": "programmer" },
+    { "label": "编程自学", "key": "study" },
     { "label": "程序员导航", "key": "programmer-nav" },
     { "label": "技术博客", "key": "tech-blog" },
-    { "label": "后端开发", "key": "backend-dev" },
     { "label": "大数据工具", "key": "big-data-tools" },
     { "label": "常用工具", "key": "common-tools" },
     { "label": "编程好帮手", "key": "coding-helper" },
@@ -24,52 +21,103 @@ export const dataUrlNav = {
     { "label": "开发工具", "key": "dev-tools" },
     { "label": "资源推荐", "key": "resource-recommend" },
     { "label": "音乐专区", "key": "music-area" },
-    { "label": "私活平台", "key": "freelance-platform" },
     { "label": "图片专区", "key": "image-area" },
     { "label": "编程练习", "key": "coding-practice" },
-    { "label": "快捷工具", "key": "quick-tools" },
   ],
   "sections": [
+    {
+      "id": "often",
+      "title": "⭐常用",
+      "cards": [
+        { "icon": "/image/touxiang.png", "title": "RiverBillowBlog", "desc": "RiverBillowBlog博客", "url": "/jiangtao/#/" },
+        {
+          "icon": "/image/daohang/github.jpg",
+          "title": "jiangtao",
+          "desc": "jiangtao",
+          "url": "https://github.com/zhangyu-175-2/jiangtao"
+        },
+        {
+          "icon": "/image/daohang/github.jpg",
+          "title": "jiangtaoshop",
+          "desc": "jiangtaoshop",
+          "url": "https://github.com/zhangyu-175-2/jiangtaoshop"
+        },
+        {
+          "icon": "/image/daohang/cloudflare.png",
+          "title": "cloudflare",
+          "desc": "cloudflare",
+          "url": "https://dash.cloudflare.com/76d73971986500477a360da692f4fe8b/workers/services/view/jiangtao/production/builds/34d49bf2-9ac6-435c-8de9-0a60a244971d"
+        },
+        {
+          "icon": "/image/daohang/vercel.png",
+          "title": "vercel",
+          "desc": "vercel",
+          "url": "https://vercel.com/zhangyu-175-2s-projects/jiangtao/deployments"
+        },
+        {
+          "icon": "/image/daohang/lingdaima.ico",
+          "title": "最美博客",
+          "desc": "提供各类资源分享，包含影视、图片类资源，同时设有付费专栏及付费商品相关内容",
+          "url": "https://poetize.cn/sort/7/0"
+        },
+        // { "icon": "https://s1.ax1x.com/2022/11/10/z9E7X4.jpg", "title": "最美博客", "desc": "这是一个 Vue2 Vue3 与 SpringBoot 结合的产物～", "url": "https://poetize.cn" },
+
+        {
+          "icon": "/image/daohang/lingdaima.ico",
+          "title": "最美博客-半页时光",
+          "desc": "综合类博客平台，分享开源工具、学习资源、软件破解教程、AI 工具、文史阅读及视听内容等",
+          "url": "https://gegeblog.top/"
+        },
+        {
+          "icon": "/image/daohang/lingdaima.ico",
+          "title": "最美博客-leapya",
+          "desc": "网页解析失败，暂无法获取平台相关内容",
+          "url": "https://www.leapya.com/"
+        },
+        {
+          "icon": "/image/daohang/github.jpg",
+          "title": "awesome-poetize-open",
+          "desc": "LeapYa 维护的 POETIZE 最美博客 AGPL 分支，是集内容创作与社交于一体的现代化开源博客系统，基于原项目扩展多项功能，支持一键部署、SEO 优化、多端适配及 OpenClaw 博客自动化，技术栈升级且提供完善的部署、开发与排障文档",
+          "url": "https://github.com/LeapYa/awesome-poetize-open"
+        },
+
+
+      ]
+    },
     {
       "id": "english",
       "title": "英语学习",
       "cards": [
+        {
+          "icon": "/image/daohang/knowledgefxg.png",
+          "title": "English Learning Resources",
+          "desc": "整合多类英语学习资源，含播客、电台、口语练习、YouTube 教学频道等，覆盖不同学习水平",
+          "url": "https://en.knowledgefxg.com/"
+        },
+        { "icon": "https://englishnewsinlevels.com/apple-touch-icon.png", "title": "Breaking News English", "desc": "分级英文新闻，难度可选", "url": "https://englishnewsinlevels.com/news/level-1" },
+        {
+          "icon": "https://qwerty.kaiyi.cool/apple-touch-icon.png",
+          "title": "Qwerty Learner",
+          "desc": "为键盘工作者设计的开源英语学习工具，结合打字练习与单词记忆，含四六级、考研、托福等多类词库及程序员专属技术词汇，支持多平台且有精准数据统计功能",
+          "url": "https://qwerty.kaiyi.cool/"
+        },
         { "icon": "🎙️", "title": "BBC Learning English", "desc": "BBC官方英语学习，听力阅读素材", "url": "https://www.bbc.co.uk/learningenglish" },
         { "icon": "📻", "title": "VOA慢速英语", "desc": "语速缓慢，适合零基础、初中级听力", "url": "https://learningenglish.voanews.com/" },
-        { "icon": "📚", "title": "Duolingo", "desc": "多邻国，游戏化背单词学英语", "url": "https://www.duolingo.com/" },
-        { "icon": "🔍", "title": "Forvo", "desc": "全球单词发音词典，真人发音", "url": "https://forvo.com/" },
-        { "icon": "✍️", "title": "Grammarly", "desc": "英文语法检查、写作润色工具", "url": "https://www.grammarly.com/" },
         { "icon": "🎧", "title": "ESL Pod", "desc": "日常口语对话，逐句讲解", "url": "https://eslpod.com/" },
         { "icon": "📺", "title": "TED Talks", "desc": "英语演讲，练听力积累表达", "url": "https://www.ted.com/" },
-        { "icon": "📰", "title": "Breaking News English", "desc": "分级英文新闻，难度可选", "url": "https://breakingnewsenglish.com/" }
       ]
     },
     {
-      "id": "frontend",
-      "title": "💻 前端开发",
+      "id": "Excellent-open-source-project",
+      "title": "💼 优秀开源项目",
       "cards": [
-        { "icon": "📘", "title": "MDN Web Docs", "desc": "前端官方权威文档，HTML/CSS/JS", "url": "https://developer.mozilla.org/" },
-        { "icon": "https://v2.cn.vuejs.org/images/logo.svg", "title": "Vue.js", "desc": "渐进式前端框架，中文文档", "url": "https://cn.vuejs.org/" },
-        { "icon": "🔥", "title": "React", "desc": "主流前端框架，组件化开发", "url": "https://react.dev/" },
-        { "icon": "🎨", "title": "CSS Tricks", "desc": "CSS 布局、动画技巧大全", "url": "https://css-tricks.com/" },
-        { "icon": "📦", "title": "npm", "desc": "前端包管理、依赖查询", "url": "https://www.npmjs.com/" },
-        { "icon": "🎯", "title": "Can I Use", "desc": "查询CSS/JS属性浏览器兼容性", "url": "https://caniuse.com/" },
-        { "icon": "🚀", "title": "Vite", "desc": "新一代前端构建工具", "url": "https://cn.vitejs.dev/" },
-        { "icon": "📱", "title": "Flexbox Froggy", "desc": "小游戏学习 Flex 布局", "url": "https://flexboxfroggy.com/" }
-      ]
-    },
-    {
-      "id": "programmer",
-      "title": "🧑‍💻 程序员工具",
-      "cards": [
-        { "icon": "https://github.githubassets.com/favicons/favicon.png", "title": "GitHub", "desc": "全球代码托管、开源项目", "url": "https://github.com/" },
-        { "icon": "https://stackoverflow.com/favicon.ico", "title": "Stack Overflow", "desc": "编程问题问答社区", "url": "https://stackoverflow.com/" },
-        { "icon": "https://cn-assets.gitee.com/assets/favicon-9007bd527d8a7851c8330e783151df58.ico", "title": "Gitee", "desc": "国产代码托管平台", "url": "https://gitee.com/" },
-        { "icon": "📝", "title": "CodePen", "desc": "在线前端代码调试演示", "url": "https://codepen.io/" },
-        { "icon": "⚙️", "title": "JSON.cn", "desc": "JSON格式化、校验工具", "url": "https://www.json.cn/" },
-        { "icon": "🔐", "title": "Git", "desc": "版本控制工具官方文档", "url": "https://git-scm.com/" },
-        { "icon": "https://leetcode-cn.com/favicon.ico", "title": "LeetCode", "desc": "算法刷题，面试必备", "url": "https://leetcode.cn/" },
-        { "icon": "🛠️", "title": "Runno", "desc": "在线运行多种编程语言", "url": "https://runno.dev/" }
+        { "icon": "/image/daohang/lingdaima.ico", "title": "炽阳001", "desc": "炽小阳软件库，群号625129637", "url": "http://www.chiyang001.top/" },
+        {
+          "icon": "/image/daohang/github.jpg",
+          "title": "Telegram精选",
+          "desc": "Telegram 中文频道与群组精选",
+          "url": "https://github.com/jackvale/rectg?tab=readme-ov-file"
+        },
       ]
     },
     {
@@ -87,71 +135,102 @@ export const dataUrlNav = {
       ]
     },
     {
-      "id": "ai",
-      "title": "🤖 AI 工具合集",
+      "id": "network",
+      "title": "🌐 跨境电商网络",
       "cards": [
-        { "icon": "/image/daohang/openai.png", "title": "ChatGPT", "desc": "通用AI对话、写作、编程辅助", "url": "https://chat.openai.com/" },
-        { "icon": "🎨", "title": "Midjourney", "desc": "AI绘画、设计、海报生成", "url": "https://www.midjourney.com/" },
-        { "icon": "/image/daohang/doubao.png", "title": "豆包", "desc": "国产AI，写作、总结、答疑", "url": "https://www.doubao.com/" },
-        { "icon": "🔊", "title": "ElevenLabs", "desc": "AI真人语音合成", "url": "https://elevenlabs.io/" },
-        { "icon": "🎬", "title": "Pika Labs", "desc": "AI文本生成视频", "url": "https://pika.art/" },
-        { "icon": "https://tongyi.aliyun.com/favicon.ico", "title": "通义千问", "desc": "阿里AI，办公文案助手", "url": "https://tongyi.aliyun.com/" },
-        { "icon": "https://www.remove.bg/favicon.ico", "title": "Remove.bg", "desc": "AI一键抠图去背景", "url": "https://www.remove.bg/" },
-        { "icon": "📚", "title": "ChatDOC", "desc": "AI阅读PDF、文档总结", "url": "https://chatdoc.com/" }
+        {
+          "icon": "/image/daohang/avatar.jpg",
+          "title": "Clash Free Node",
+          "desc": "每日更新免费的 SSR/Clash/v2ray 等网络节点，覆盖多国多地区，提供高速节点资源及相关机场推荐",
+          "url": "https://clashgithub.com/category/freenode"
+        },
+        {
+          "icon": "/image/daohang/lingdaima.ico",
+          "title": "Ping0",
+          "desc": "网络风险",
+          "url": "https://ping0.cc/"
+        },
+        {
+          "icon": "/image/daohang/lingdaima.ico",
+          "title": "WhatIsMyIP",
+          "desc": "网络IP地址",
+          "url": "https://www.whatismyip.com/"
+        },
+
       ]
     },
     {
-      "id": "design",
-      "title": "🎨 设计资源",
+      "id": "frontend",
+      "title": "⚛️ 前端开发",
       "cards": [
-        { "icon": "🖌️", "title": "Figma", "desc": "在线UI设计、原型协作", "url": "https://www.figma.com/" },
-        { "icon": "https://www.pexels.com/favicon.ico", "title": "Pexels", "desc": "免费可商用高清图片", "url": "https://www.pexels.com/" },
-        { "icon": "🎨", "title": "Dribbble", "desc": "优秀UI设计作品参考", "url": "https://dribbble.com/" },
-        { "icon": "🌈", "title": "ColorHub", "desc": "配色方案、色彩工具", "url": "https://www.colorhub.app/" },
-        { "icon": "https://unsplash.com/favicon.ico", "title": "Unsplash", "desc": "无版权高清摄影图", "url": "https://unsplash.com/" },
-        { "icon": "✏️", "title": "Canva", "desc": "可画，在线海报设计", "url": "https://www.canva.com/" }
-      ]
-    },
-    {
-      "id": "study",
-      "title": "📚 编程自学",
-      "cards": [
-        { "icon": "https://www.bilibili.com/favicon.ico", "title": "B站学习", "desc": "海量免费编程、前端教程", "url": "https://www.bilibili.com/" },
-        { "icon": "https://www.imooc.com/favicon.ico", "title": "慕课网", "desc": "IT职业技能在线课程", "url": "https://www.imooc.com/" },
-        { "icon": "https://www.runoob.com/favicon.ico", "title": "菜鸟教程", "desc": "编程入门基础教程", "url": "https://www.runoob.com/" },
-        { "icon": "🔧", "title": "廖雪峰博客", "desc": "Git、Java、Python全栈教程", "url": "https://www.liaoxuefeng.com/" },
-        { "icon": "https://www.nowcoder.com/favicon.ico", "title": "NowCoder", "desc": "牛客网，笔试面试题库", "url": "https://www.nowcoder.com/" }
-      ]
-    },
-    {
-      "id": "tools",
-      "title": "🛠️ 实用工具",
-      "cards": [
-        { "icon": "📅", "title": "ProcessOn", "desc": "在线思维导图、流程图", "url": "https://www.processon.com/" },
-        { "icon": "📝", "title": "石墨文档", "desc": "在线协作文档", "url": "https://shimo.im/" },
-        { "icon": "🧾", "title": "PDF24", "desc": "PDF合并、分割、转换", "url": "https://tools.pdf24.org/" },
-        { "icon": "🌐", "title": "IP查询", "desc": "IP地址、域名信息查询", "url": "https://www.ip138.com/" },
-        { "icon": "🧮", "title": "在线计算器", "desc": "科学计算、进制转换", "url": "https://www.99cankao.com/" },
-        { "icon": "https://tinypng.com/favicon.ico", "title": "TinyPNG", "desc": "图片压缩，无损缩小体积", "url": "https://tinypng.com/" }
-      ]
-    },
-    {
-      "id": "job",
-      "title": "💼 求职面试",
-      "cards": [
-        { "icon": "🔍", "title": "BOSS直聘", "desc": "互联网招聘找工作", "url": "https://www.zhipin.com/" },
-        { "icon": "🧑‍💼", "title": "拉勾网", "desc": "互联网IT专属招聘", "url": "https://www.lagou.com/" },
-        { "icon": "📋", "title": "面试鸭", "desc": "前端、后端面试题库", "url": "https://www.mianshiya.com/" },
-        { "icon": "🧩", "title": "前端面试题", "desc": "大厂前端面试总结", "url": "https://frontendinterviewhandbook.com/" }
+        { "icon": "/image/daohang/vue.png", "title": "Vue.js", "desc": "渐进式前端框架，中文文档", "url": "https://cn.vuejs.org/" },
+        { "icon": "/image/daohang/vue.png", "title": "Vue 2 官网", "desc": "渐进式 JavaScript 框架", "url": "https://v2.cn.vuejs.org/v2/guide" },
+        { "icon": "/image/daohang/vue.png", "title": "Vue 3 官网", "desc": "Vue 3 的文档", "url": "https://cn.vuejs.org/guide/introduction.html" },
+        { "icon": "/image/daohang/react.png", "title": "React", "desc": "主流前端框架，组件化开发", "url": "https://react.dev/" },
+        { "icon": "📦", "title": "npm", "desc": "前端包管理、依赖查询", "url": "https://www.npmjs.com/" },
+        { "icon": "🚀", "title": "Vite", "desc": "新一代前端构建工具", "url": "https://cn.vitejs.dev/" },
+        { "icon": "https://element.eleme.cn/favicon.ico", "title": "Element-UI", "desc": "一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库", "url": "https://element.eleme.cn/#/zh-CN" },
+        { "icon": "https://element.eleme.cn/favicon.ico", "title": "Element Plus", "desc": "基于 Vue 3，面向设计师和开发者的组件库", "url": "https://element-plus.org/#/zh-CN" },
+        { "icon": "https://zh.javascript.info/img/favicon/favicon.png", "title": "JavaScript 教程", "desc": "现代 JavaScript 教程：有关示例和任务的简单但详细的解释包括：闭包、文档和事件，以及面向对象编程等", "url": "https://zh.javascript.info/" },
+        { "icon": "http://www.animate.net.cn/favicon.ico", "title": "Animate中文网", "desc": "强大的跨平台的预设 css3 动画库", "url": "http://www.animate.net.cn/" },
+        { "icon": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg", "title": "Ant Design of Vue", "desc": "Ant Design 的 Vue 实现，开发和服务于企业级后台产品", "url": "https://www.antdv.com/docs/vue/introduce-cn" },
+        { "icon": "https://www.bootcdn.cn/assets/ico/apple-touch-icon-144-precomposed.png?1680970562608", "title": "BootCDN - CDN", "desc": "中文网开源项目免费 CDN 加速服务", "url": "https://www.bootcdn.cn/" },
+        { "icon": "https://cdnjs.com/favicon.png", "title": "cdnjs - CDN", "desc": "一个免费的开源CN服务", "url": "https://cdnjs.com/" },
+        { "icon": "https://pandao.github.io/editor.md/favicon.ico", "title": "Editor.md", "desc": "Markdown 编辑器", "url": "https://pandao.github.io/editor.md/" },
+        { "icon": "https://fontawesome.com.cn/favicon.ico", "title": "Fontawesome中文网", "desc": "大量免费图标", "url": "https://fontawesome.com.cn/" },
+        { "icon": "http://img.alicdn.com/imgextra/i4/O1CN01XZe8pH1USpiUNT1QN_!!6000000002517-2-tps-114-114.png", "title": "iconfont", "desc": "阿里巴巴矢量图标库", "url": "https://www.iconfont.cn/" },
+        { "icon": "", "title": "markdown-it", "desc": "Markdown 编辑器", "url": "https://markdown-it.docschina.org/" },
+        { "icon": "", "title": "mavonEditor", "desc": "Markdown 编辑器", "url": "http://www.mavoneditor.com/" },
+        { "icon": "https://www.naiveui.com/assets/naivelogo-93278402.svg", "title": "Naive UI", "desc": "一个 Vue 3 组件库", "url": "https://www.naiveui.com/zh-CN/light" },
+        { "icon": "📘", "title": "MDN Web Docs", "desc": "前端官方权威文档，HTML/CSS/JS", "url": "https://developer.mozilla.org/" },
+
+        { "icon": "🎨", "title": "CSS Tricks", "desc": "CSS 布局、动画技巧大全", "url": "https://css-tricks.com/" },
+        { "icon": "🎯", "title": "Can I Use", "desc": "查询CSS/JS属性浏览器兼容性", "url": "https://caniuse.com/" },
+        { "icon": "📱", "title": "Flexbox Froggy", "desc": "小游戏学习 Flex 布局", "url": "https://flexboxfroggy.com/" }
       ]
     },
     {
       "id": "ai-tools",
       "title": "🤖 AI工具",
       "cards": [
-        { "icon": "/image/daohang/doubao.png", "title": "GPT-4", "desc": "OpenAI旗下最新的GPT-4模型", "url": "https://www.doubao.com/" },
-        { "icon": "https://chat.deepseek.com/favicon.ico", "title": "deepseek", "desc": "全能AI助手", "url": "https://chat.deepseek.com/" },
-        { "icon": "/image/daohang/openai.png", "title": "chatGPT", "desc": "OpenAI 开发的对话式人工智能助手", "url": "https://chatgpt.com/" },
+        { "icon": "/image/daohang/doubao.png", "title": "豆包", "desc": "国产AI，写作、总结、答疑", "url": "https://www.doubao.com/" },
+        {
+          "icon": "/image/daohang/openai.png",
+          "title": "ChatGPT",
+          "desc": "OpenAI 开发的全球知名 AI 聊天机器人平台，提供 GPT-4o 等多模型支持，具备多模态交互、联网搜索、长文本理解与生成能力，支持免费基础版与 Plus/Team 付费订阅，适用于创意写作、编程辅助、知识问答等多种场景",
+          "url": "https://chatgpt.com/"
+          // "url": "https://chat.openai.com/"
+        },
+        {
+          "icon": "https://gemini.google.com/apple-touch-icon.png",
+          "title": "Gemini",
+          "desc": "Google DeepMind 研发的原生多模态 AI 助手，提供 Gemini 3.1 Pro 等模型选项，支持超长篇上下文处理、实时联网搜索、文件上传解析与代码生成，无缝集成 Google 生态，适用于复杂推理、内容创作与开发辅助",
+          "url": "https://gemini.google.com/"
+        },
+        {
+          "icon": "https://grok.com/apple-touch-icon.png",
+          "title": "Grok AI",
+          "desc": "马斯克 xAI 团队打造的 AI 聊天平台，以 ' 直言不讳 ' 风格与实时数据支持为特色，集成 X 平台 (原 Twitter) 实时信息检索，提供 Super Grok 订阅服务，具备 AI 绘图、文件上传与复杂推理能力，适合追求时效性与独特交互体验的用户",
+          "url": "https://grok.com/"
+        },
+        {
+          "icon": "https://claude.ai/apple-touch-icon.png",
+          "title": "Claude AI",
+          "desc": "Anthropic 开发的 AI 助手，秉持 ' 有用、无害、诚实 ' 理念，提供 Opus/Sonnet/Haiku 多模型选择，支持超长文本处理 (最高 200K 上下文)、多模态交互与联网搜索，免费版功能完整，Pro 订阅解锁高级能力，适合长文档分析与专业工作流",
+          "url": "https://claude.ai/"
+        },
+        {
+          "icon": "https://chat.deepseek.com/apple-touch-icon.png",
+          "title": "DeepSeek Chat",
+          "desc": "深度求索开发的免费 AI 聊天平台，提供 DeepSeek-V3.2/R1 等高性能模型，支持永久免费使用、文件上传、联网搜索与代码生成，中文能力突出，推理与编程辅助表现优异，支持微信扫码 / 手机号 / 邮箱多种登录方式",
+          "url": "https://chat.deepseek.com/"
+        },
+        { "icon": "🎨", "title": "Midjourney", "desc": "AI绘画、设计、海报生成", "url": "https://www.midjourney.com/" },
+        { "icon": "🔊", "title": "ElevenLabs", "desc": "AI真人语音合成", "url": "https://elevenlabs.io/" },
+        { "icon": "🎬", "title": "Pika Labs", "desc": "AI文本生成视频", "url": "https://pika.art/" },
+        { "icon": "https://tongyi.aliyun.com/favicon.ico", "title": "通义千问", "desc": "阿里AI，办公文案助手", "url": "https://tongyi.aliyun.com/" },
+        { "icon": "https://www.remove.bg/favicon.ico", "title": "Remove.bg", "desc": "AI一键抠图去背景", "url": "https://www.remove.bg/" },
+        { "icon": "📚", "title": "ChatDOC", "desc": "AI阅读PDF、文档总结", "url": "https://chatdoc.com/" },
         { "icon": "https://www.google.com/s2/favicons?domain=dreamstudio.ai", "title": "Stable Diffusion", "desc": "Stability AI推出的文本到图像生成AI", "url": "https://beta.dreamstudio.ai" },
         { "icon": "https://wenxin.baidu.com/favicon.ico", "title": "文心大模型", "desc": "百度推出的产业级知识增强大模型", "url": "https://wenxin.baidu.com" },
         { "icon": "https://tongyi.aliyun.com/favicon.ico", "title": "通义千问", "desc": "阿里巴巴最新推出的类ChatGPT响应人类指令的大模型", "url": "https://tongyi.aliyun.com" },
@@ -163,25 +242,28 @@ export const dataUrlNav = {
       ]
     },
     {
-      "id": "frontend-extension",
-      "title": "⚛️ 前端开发拓展",
+      "id": "programmer",
+      "title": "🧑‍💻 程序员工具",
       "cards": [
-        { "icon": "https://v2.cn.vuejs.org/images/logo.svg", "title": "Vue 2 官网", "desc": "渐进式 JavaScript 框架", "url": "https://v2.cn.vuejs.org/v2/guide" },
-        { "icon": "https://v2.cn.vuejs.org/images/logo.svg", "title": "Vue 3 官网", "desc": "Vue 3 的文档", "url": "https://cn.vuejs.org/guide/introduction.html" },
-        { "icon": "https://element.eleme.cn/favicon.ico", "title": "Element-UI", "desc": "一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库", "url": "https://element.eleme.cn/#/zh-CN" },
-        { "icon": "https://element-plus.gitee.io/images/element-plus-logo.svg", "title": "Element Plus", "desc": "基于 Vue 3，面向设计师和开发者的组件库", "url": "https://element-plus.org/#/zh-CN" },
-        { "icon": "http://www.animate.net.cn/favicon.ico", "title": "Animate中文网", "desc": "强大的跨平台的预设 css3 动画库", "url": "http://www.animate.net.cn/" },
-        { "icon": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg", "title": "Ant Design of Vue", "desc": "Ant Design 的 Vue 实现，开发和服务于企业级后台产品", "url": "https://www.antdv.com/docs/vue/introduce-cn" },
-        { "icon": "https://www.bootcdn.cn/assets/ico/apple-touch-icon-144-precomposed.png?1680970562608", "title": "BootCDN - CDN", "desc": "中文网开源项目免费 CDN 加速服务", "url": "https://www.bootcdn.cn/" },
-        { "icon": "https://cdnjs.com/favicon.png", "title": "cdnjs - CDN", "desc": "一个免费的开源CN服务", "url": "https://cdnjs.com/" },
-        { "icon": "https://pandao.github.io/editor.md/favicon.ico", "title": "Editor.md", "desc": "Markdown 编辑器", "url": "https://pandao.github.io/editor.md/" },
-        { "icon": "https://emojixd.com/favicon.ico", "title": "Emoji 百科全书", "desc": "收录了所有emoji，提供最新热门emoji参考", "url": "https://emojixd.com/" },
-        { "icon": "https://fontawesome.com.cn/favicon.ico", "title": "Fontawesome中文网", "desc": "大量免费图标", "url": "https://fontawesome.com.cn/" },
-        { "icon": "http://img.alicdn.com/imgextra/i4/O1CN01XZe8pH1USpiUNT1QN_!!6000000002517-2-tps-114-114.png", "title": "iconfont", "desc": "阿里巴巴矢量图标库", "url": "https://www.iconfont.cn/" },
-        { "icon": "https://zh.javascript.info/img/favicon/favicon.png", "title": "JavaScript 教程", "desc": "现代 JavaScript 教程：有关示例和任务的简单但详细的解释包括：闭包、文档和事件，以及面向对象编程等", "url": "https://zh.javascript.info/" },
-        { "icon": "", "title": "markdown-it", "desc": "Markdown 编辑器", "url": "https://markdown-it.docschina.org/" },
-        { "icon": "", "title": "mavonEditor", "desc": "Markdown 编辑器", "url": "http://www.mavoneditor.com/" },
-        { "icon": "https://www.naiveui.com/assets/naivelogo-93278402.svg", "title": "Naive UI", "desc": "一个 Vue 3 组件库", "url": "https://www.naiveui.com/zh-CN/light" }
+        { "icon": "https://stackoverflow.com/favicon.ico", "title": "Stack Overflow", "desc": "编程问题问答社区", "url": "https://stackoverflow.com/" },
+        { "icon": "https://cn-assets.gitee.com/assets/favicon-9007bd527d8a7851c8330e783151df58.ico", "title": "Gitee", "desc": "国产代码托管平台", "url": "https://gitee.com/" },
+        { "icon": "📝", "title": "CodePen", "desc": "在线前端代码调试演示", "url": "https://codepen.io/" },
+        { "icon": "⚙️", "title": "JSON.cn", "desc": "JSON格式化、校验工具", "url": "https://www.json.cn/" },
+        { "icon": "🔐", "title": "Git", "desc": "版本控制工具官方文档", "url": "https://git-scm.com/" },
+        { "icon": "https://leetcode-cn.com/favicon.ico", "title": "LeetCode", "desc": "算法刷题，面试必备", "url": "https://leetcode.cn/" },
+        { "icon": "🛠️", "title": "Runno", "desc": "在线运行多种编程语言", "url": "https://runno.dev/" }
+      ]
+    },
+
+    {
+      "id": "study",
+      "title": "📚 编程自学",
+      "cards": [
+        { "icon": "https://www.bilibili.com/favicon.ico", "title": "B站学习", "desc": "海量免费编程、前端教程", "url": "https://www.bilibili.com/" },
+        { "icon": "https://www.imooc.com/favicon.ico", "title": "慕课网", "desc": "IT职业技能在线课程", "url": "https://www.imooc.com/" },
+        { "icon": "https://www.runoob.com/favicon.ico", "title": "菜鸟教程", "desc": "编程入门基础教程", "url": "https://www.runoob.com/" },
+        { "icon": "🔧", "title": "廖雪峰博客", "desc": "Git、Java、Python全栈教程", "url": "https://www.liaoxuefeng.com/" },
+        { "icon": "https://www.nowcoder.com/favicon.ico", "title": "NowCoder", "desc": "牛客网，笔试面试题库", "url": "https://www.nowcoder.com/" }
       ]
     },
     {
@@ -198,23 +280,6 @@ export const dataUrlNav = {
         { "icon": "https://g.csdnimg.cn/static/logo/favicon32.ico", "title": "CSDN", "desc": "暂停更新", "url": "https://blog.csdn.net/WCJ_0408?spm=1000.2115.3001.5343" },
         { "icon": "https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/favicon-32x32.png", "title": "掘金", "desc": "暂停更新", "url": "https://juejin.cn/user/655741014511725/columns" },
         { "icon": "https://github.githubassets.com/favicons/favicon.png", "title": "GitHub 仓库", "desc": "已停止更新", "url": "https://github.com" }
-      ]
-    },
-    {
-      "id": "backend-dev",
-      "title": "⚙️ 后端开发",
-      "cards": [
-        { "icon": "https://apisix.apache.org/zh/img/logo2.svg", "title": "Apache APISIX 中文官网", "desc": "全生命周期 API 管理", "url": "https://apisix.apache.org/zh/docs/" },
-        { "icon": "https://plus.hutool.cn/images/hutool.svg", "title": "Hutool 官网", "desc": "小而全的Java工具类库", "url": "https://hutool.cn/" },
-        { "icon": "https://mvnrepository.com/assets/images/7080b8b0f6f48e6fbaffd5f9d85fcc7f-favicon.ico", "title": "Maven 公共仓库", "desc": "Maven Repository: Search/Browse/Explore", "url": "https://mvnrepository.com/" },
-        { "icon": "https://baomidou.com/img/logo.svg", "title": "MyBatis-Plus 官网", "desc": "为简化开发而生", "url": "https://baomidou.com/" },
-        { "icon": "https://raw.githubusercontent.com/KFCFans/PowerJob/master/others/images/logo.png", "title": "PowerJob 官网", "desc": "全新一代分布式任务调度与计算框架", "url": "http://www.powerjob.tech/" },
-        { "icon": "https://www.redis.net.cn/Application/Home/View/Public/img/redis-white.png", "title": "Redis 中文官网", "desc": "一个开源（BSD许可）的，内存中的数据结构存储系统", "url": "http://redis.cn/" },
-        { "icon": "https://www.redis.net.cn/Application/Home/View/Public/img/redis-white.png", "title": "Redisson 中文文档", "desc": "Redisson的宗旨是促进使用者对Redis的关注分离，从而让使用者能够将精力更集中地放在处理业务逻辑上", "url": "https://github.com/redisson/redisson/wiki/%E7%9B%AE%E5%BD%95" },
-        { "icon": "https://springref.com/Application/Home/View/Public/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg", "title": "Spring Boot 中文文档", "desc": "由 springboot.io - Spring Boot中文社区 进行翻译，整理", "url": "https://springdoc.cn/spring-boot" },
-        { "icon": "https://avatars.githubusercontent.com/u/1961952?s=200&v=4", "title": "Spring Cloud Alibaba 文档", "desc": "微服务开发的一站式解决方案", "url": "https://github.com/alibaba/spring-cloud-alibaba/blob/2022.x/README-zh.md" },
-        { "icon": "https://springref.com/Application/Home/View/Public/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg", "title": "Spring Cloud 文档", "desc": "官方英文文档", "url": "https://spring.io/projects/spring-cloud/" },
-        { "icon": "https://springref.com/Application/Home/View/Public/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg", "title": "Spring 中文文档", "desc": "由 springboot.io - Spring Boot中文社区 进行翻译，整理", "url": "https://springdoc.cn/spring" }
       ]
     },
     {
@@ -235,8 +300,39 @@ export const dataUrlNav = {
       "id": "common-tools",
       "title": "🔧 常用工具",
       "cards": [
+        { "icon": "/image/daohang/json.ico", "title": "Json 格式转换", "desc": "JSON 数据格式化与解析工具", "url": "https://tool.lu/json/" },
+        { "icon": "/image/daohang/timestamp.png", "title": "时间戳转换 (Unix - 北京)", "desc": "Unix 时间戳与北京时间相互转换", "url": "https://tool.lu/timestamp/" },
+        { "icon": "/image/daohang/epochConverter.jpg", "title": "时间戳转换 (Unix-GMT，批量)", "desc": "批量 Unix 时间戳与 GMT 时间转换", "url": "https://www.epochconverter.com/" },
+        { "icon": "/image/daohang/dx.png", "title": "字母大小写转换", "desc": "英文字母大小写快速转换", "url": "http://www.wetools.com/text-case-convert/a9c2e510d3a2d0e5add9b68a27086b9e" },
+
         { "icon": "https://cn-assets.gitee.com/assets/favicon-9007bd527d8a7851c8330e783151df58.ico", "title": "Gitee 仓库", "desc": "我的 Gitee", "url": "https://gitee.com/littledokey" },
-        { "icon": "https://s1.ax1x.com/2022/11/10/z9E7X4.jpg", "title": "最美博客", "desc": "这是一个 Vue2 Vue3 与 SpringBoot 结合的产物～", "url": "https://poetize.cn" }
+        { "icon": "/image/daohang/redhat.png", "title": "Linux 命令大全", "desc": "Linux 系统常用命令查询", "url": "https://www.linuxcool.com/" },
+        { "icon": "/image/daohang/jQuery.ico", "title": "jQuery 速查表", "desc": "jQuery 常用语法参考", "url": "http://hemin.cn/jq/" },
+        { "icon": "/image/daohang/oschina.ico", "title": "正则表达式测试", "desc": "正则表达式在线验证与调试", "url": "https://tool.oschina.net/regex/" },
+        { "icon": "/image/daohang/ip.png", "title": "IP 地址查询", "desc": "IP 地址归属地及相关信息查询", "url": "https://tool.lu/ip/" },
+        { "icon": "/image/daohang/base64.png", "title": "图片 base64 编码", "desc": "图片与 base64 格式相互转换", "url": "https://tool.lu/base64image/" },
+        { "icon": "/image/daohang/code.png", "title": "在线代码测试", "desc": "多语言在线代码运行与调试", "url": "https://tool.lu/coderunner/" },
+        { "icon": "/image/daohang/favicon.ico", "title": "在线文本对比", "desc": "两段文本差异对比工具", "url": "tool/word_compare.html" },
+        { "icon": "/image/daohang/favicon.ico", "title": "进制转换", "desc": "二进制、十进制、十六进制等相互转换", "url": "tool/binary.html" },
+        { "icon": "/image/daohang/down.png", "title": "下载链接转换工具", "desc": "下载链接解析与转换", "url": "https://tool.lu/urlconvert/" },
+        { "icon": "/image/daohang/cal.png", "title": "网上计算器", "desc": "科学计算与日常计算工具", "url": "http://cal.apple886.com/" },
+        { "icon": "/image/daohang/curl.png", "title": "curl 命令转代码", "desc": "curl 命令转换为多种编程语言代码", "url": "https://tool.lu/curl/" },
+        { "icon": "/image/daohang/zf.png", "title": "中文简繁体转换", "desc": "中文简体与繁体相互转换", "url": "https://tool.lu/zhconvert" },
+        { "icon": "/image/daohang/dx.png", "title": "数字大写转换器", "desc": "阿拉伯数字转中文大写金额", "url": "https://tool.gaodun.com/rmb.html" },
+        { "icon": "/image/daohang/er.png", "title": "二维码制作工具", "desc": "文本、链接等生成二维码", "url": "https://cli.im/" },
+        { "icon": "/image/daohang/index/tech/oschina.ico", "title": "加密解密", "desc": "多种加密算法的加密与解密操作", "url": "https://tool.oschina.net/encrypt" },
+        { "icon": "/image/daohang/cron.png", "title": "Cron 表达式", "desc": "Cron 表达式在线生成与解析", "url": "https://www.matools.com/cron/" },
+        { "icon": "/image/daohang/ps.png", "title": "在线 PS", "desc": "网页版 Photoshop 图片处理", "url": "https://pixlr.com/cn/x/" },
+
+        { "icon": "/image/daohang/index/resources/wd.ico", "title": "字数统计", "desc": "文本字数、字符数等统计", "url": "https://www.eteste.com/" },
+        { "icon": "/image/daohang/convertio.ico", "title": "文件格式转换", "desc": "多种文件格式相互转换", "url": "https://convertio.co/zh/" },
+        { "icon": "/image/daohang/index/media/wx.ico", "title": "公众号", "desc": "微信公众号管理平台", "url": "https://mp.weixin.qq.com/" },
+        { "icon": "/image/daohang/sioe.ico", "title": "颜色转化器", "desc": "RGB、十六进制等颜色格式转换", "url": "https://www.sioe.cn/yingyong/yanse-rgb-16/" },
+        { "icon": "/image/daohang/wechatsync.jpg", "title": "文章同步助手", "desc": "多平台文章一键同步工具", "url": "https://www.wechatsync.com/" },
+
+        { "icon": "/image/daohang/bf.ico", "title": "百度翻译", "desc": "多语言即时翻译工具", "url": "https://fanyi.baidu.com/translate" },
+        { "icon": "/image/daohang/gf.png", "title": "谷歌翻译", "desc": "多语言精准翻译服务", "url": "https://translate.google.cn/" },
+        { "icon": "/image/daohang/deepl.jpg", "title": "DeepL 翻译", "desc": "AI 驱动的高质量翻译工具", "url": "https://www.deepl.com/translator" },
       ]
     },
     {
@@ -311,7 +407,6 @@ export const dataUrlNav = {
       "id": "video-area",
       "title": "🎬 视频专区",
       "cards": [
-        { "icon": "https://www.google.com/s2/favicons?domain=itmind.net", "title": "阿里云资源", "desc": "电影/电视剧/动漫合集（火热限时）", "url": "http://www.itmind.net/34767.html" },
         { "icon": "https://www.google.com/s2/favicons?domain=xgitv.com", "title": "在线之家", "desc": "在线观看最新美剧韩剧", "url": "https://www.xgitv.com/" },
         { "icon": "https://www.google.com/s2/favicons?domain=dianyinggou.com", "title": "电影狗", "desc": "专业的电影搜索引擎网站", "url": "https://www.dianyinggou.com/" },
         { "icon": "https://www.google.com/s2/favicons?domain=555dyy10.com", "title": "555电影网", "desc": "最新Netflix新剧_韩国电影免费在线观看", "url": "https://555dyy10.com/" },
@@ -365,10 +460,8 @@ export const dataUrlNav = {
       "id": "dev-tools",
       "title": "🛠️ 开发工具",
       "cards": [
-        { "icon": "https://pc.qq.com/favicon.ico", "title": "软件下载中心", "desc": "腾讯软件免费下载中心，好用，可高速下载。", "url": "https://pc.qq.com/category/c13.html" },
         { "icon": "https://code.visualstudio.com/favicon.ico", "title": "VS Code", "desc": "最受欢迎的代码编辑器！", "url": "https://code.visualstudio.com/" },
         { "icon": "https://www.jetbrains.com/favicon.ico", "title": "IntelliJ IDEA", "desc": "Java 最好用的编程工具！", "url": "https://www.jetbrains.com/idea/" },
-        { "icon": "https://www.google.com/s2/favicons?domain=itmind.net", "title": "IDEA 破解", "desc": "免费获取破解码和破解工具", "url": "http://www.itmind.net/12214.html" },
         { "icon": "https://www.sublimetext.com/favicon.ico", "title": "Sublime Text", "desc": "超轻量且强大的跨平台文本编辑器。", "url": "https://www.sublimetext.com/" },
         { "icon": "https://www.vandyke.com/favicon.ico", "title": "secureCRT&FX", "desc": "超好用的 FTP SSH 连接工具", "url": "https://www.vandyke.com/download/index.html" },
         { "icon": "https://www.navicat.com.cn/favicon.ico", "title": "Navicat", "desc": "数据库常用客户端工具", "url": "https://www.navicat.com.cn/download/navicat-premium" },
@@ -450,30 +543,7 @@ export const dataUrlNav = {
         { "icon": "https://music.163.com/favicon.ico", "title": " 网易云 ", "desc": " 网易云音乐平台 ", "url": "https://music.163.com/" }
       ]
     },
-    {
-      "id": "freelance-platform",
-      "title": "💴 私活平台",
-      "cards": [
-        { "icon": "https://www.proginn.com/favicon.ico", "title": " 程序员客栈 ", "desc": " 程序员私活接单平台 ", "url": "https://www.proginn.com" },
-        { "icon": "https://www.yuanjisong.com/favicon.ico", "title": " 猿急送 ", "desc": " 程序员兼职平台 ", "url": "https://www.yuanjisong.com/job" },
-        { "icon": "https://zb.oschina.net/favicon.ico", "title": " 开源众包 ", "desc": " 专业的软件众包平台 ", "url": "https://zb.oschina.net" },
-        { "icon": "https://shixian.com/favicon.ico", "title": " 实现网 ", "desc": " 远程兼职、技术咨询平台 ", "url": "https://shixian.com" },
-        { "icon": "https://shenyang.zbj.com/favicon.ico", "title": " 猪八戒 ", "desc": " 提供企业外包服务 ", "url": "https://shenyang.zbj.com" },
-        { "icon": "https://www.mayigeek.com/favicon.ico", "title": " 码易众包 ", "desc": " 一站式软件外包平台 ", "url": "https://www.mayigeek.com" },
-        { "icon": "http://www.taskcity.com/favicon.ico", "title": " 智城外包网 ", "desc": " 聚合全国软件团队资源 ", "url": "http://www.taskcity.com/" },
-        { "icon": "http://rrkf.com/favicon.ico", "title": " 人人开发 ", "desc": " 集众多开发者资源 ", "url": "http://rrkf.com/serv/request" },
-        { "icon": "https://eleduck.com/favicon.ico", "title": " 电鸭社区 ", "desc": " 帮助更多人实现「只工作，不上班」", "url": "https://eleduck.com/" },
-        { "icon": "https://www.duiyou360.com/favicon.ico", "title": " 云队友 ", "desc": " 专业的远程工作平台 ", "url": "https://www.duiyou360.com/" },
-        { "icon": "https://www.52solution.com/favicon.ico", "title": " 我爱方案 ", "desc": " 适合硬件工程师的兼职平台 ", "url": "https://www.52solution.com/" },
-        { "icon": "http://zhichou.com/favicon.ico", "title": " 智筹 ", "desc": " 租牛人，发项目 ", "url": "http://zhichou.com/" },
-        { "icon": "http://www.freekeer.com/favicon.ico", "title": " 自由职客 ", "desc": " 灵活用工交易平台 ", "url": "http://www.freekeer.com/" },
-        { "icon": "https://www.jfh.com/favicon.ico", "title": " 解放号 ", "desc": " 政企采购、软件外包平台 ", "url": "https://www.jfh.com/" },
-        { "icon": "https://www.sxsoft.com/favicon.ico", "title": "Sxsoft", "desc": " 专注解决各类软件开发需求 ", "url": "https://www.sxsoft.com/" },
-        { "icon": "https://www.upwork.com/favicon.ico", "title": "Upwork", "desc": " 聚集 900 万来自全球各地的自由工作者 ", "url": "https://www.upwork.com/" },
-        { "icon": "https://remoteok.io/favicon.ico", "title": "Remoteok", "desc": " 提供兼职类远程工作 ", "url": "https://remoteok.io/" },
-        { "icon": "https://www.toptal.com/favicon.ico", "title": "Toptal", "desc": " 聘请前 3% 的自由职业者 ", "url": "https://www.toptal.com/" }
-      ]
-    },
+
     {
       "id": "image-area",
       "title": "🖼️ 图片专区",
@@ -531,40 +601,6 @@ export const dataUrlNav = {
         { "icon": "https://www.google.com/s2/favicons?domain=itmind.net", "title": " 图解网络 pdf", "desc": " 点击获取图解网络 pdf，全网高赞 pdf", "url": "http://www.itmind.net/19858.html" }
       ]
     },
-    {
-      "id": "quick-tools",
-      "title": "⚡ 快捷工具",
-      "cards": [
-        { "icon": "/image/daohang/json.ico", "title": "Json 格式转换", "desc": "JSON 数据格式化与解析工具", "url": "https://tool.lu/json/" },
-        { "icon": "/image/daohang/redhat.png", "title": "Linux 命令大全", "desc": "Linux 系统常用命令查询", "url": "https://www.linuxcool.com/" },
-        { "icon": "/image/daohang/jQuery.ico", "title": "jQuery 速查表", "desc": "jQuery 常用语法参考", "url": "http://hemin.cn/jq/" },
-        { "icon": "/image/daohang/oschina.ico", "title": "正则表达式测试", "desc": "正则表达式在线验证与调试", "url": "https://tool.oschina.net/regex/" },
-        { "icon": "/image/daohang/ip.png", "title": "IP 地址查询", "desc": "IP 地址归属地及相关信息查询", "url": "https://tool.lu/ip/" },
-        { "icon": "/image/daohang/base64.png", "title": "图片 base64 编码", "desc": "图片与 base64 格式相互转换", "url": "https://tool.lu/base64image/" },
-        { "icon": "/image/daohang/code.png", "title": "在线代码测试", "desc": "多语言在线代码运行与调试", "url": "https://tool.lu/coderunner/" },
-        { "icon": "/image/daohang/favicon.ico", "title": "在线文本对比", "desc": "两段文本差异对比工具", "url": "tool/word_compare.html" },
-        { "icon": "/image/daohang/favicon.ico", "title": "进制转换", "desc": "二进制、十进制、十六进制等相互转换", "url": "tool/binary.html" },
-        { "icon": "/image/daohang/down.png", "title": "下载链接转换工具", "desc": "下载链接解析与转换", "url": "https://tool.lu/urlconvert/" },
-        { "icon": "/image/daohang/cal.png", "title": "网上计算器", "desc": "科学计算与日常计算工具", "url": "http://cal.apple886.com/" },
-        { "icon": "/image/daohang/curl.png", "title": "curl 命令转代码", "desc": "curl 命令转换为多种编程语言代码", "url": "https://tool.lu/curl/" },
-        { "icon": "/image/daohang/zf.png", "title": "中文简繁体转换", "desc": "中文简体与繁体相互转换", "url": "https://tool.lu/zhconvert" },
-        { "icon": "/image/daohang/dx.png", "title": "数字大写转换器", "desc": "阿拉伯数字转中文大写金额", "url": "https://tool.gaodun.com/rmb.html" },
-        { "icon": "/image/daohang/er.png", "title": "二维码制作工具", "desc": "文本、链接等生成二维码", "url": "https://cli.im/" },
-        { "icon": "/image/daohang/index/tech/oschina.ico", "title": "加密解密", "desc": "多种加密算法的加密与解密操作", "url": "https://tool.oschina.net/encrypt" },
-        { "icon": "/image/daohang/cron.png", "title": "Cron 表达式", "desc": "Cron 表达式在线生成与解析", "url": "https://www.matools.com/cron/" },
-        { "icon": "/image/daohang/ps.png", "title": "在线 PS", "desc": "网页版 Photoshop 图片处理", "url": "https://pixlr.com/cn/x/" },
-        { "icon": "/image/daohang/bf.ico", "title": "百度翻译", "desc": "多语言即时翻译工具", "url": "https://fanyi.baidu.com/translate" },
-        { "icon": "/image/daohang/gf.png", "title": "谷歌翻译", "desc": "多语言精准翻译服务", "url": "https://translate.google.cn/" },
-        { "icon": "/image/daohang/deepl.jpg", "title": "DeepL 翻译", "desc": "AI 驱动的高质量翻译工具", "url": "https://www.deepl.com/translator" },
-        { "icon": "/image/daohang/index/resources/wd.ico", "title": "字数统计", "desc": "文本字数、字符数等统计", "url": "https://www.eteste.com/" },
-        { "icon": "/image/daohang/convertio.ico", "title": "文件格式转换", "desc": "多种文件格式相互转换", "url": "https://convertio.co/zh/" },
-        { "icon": "/image/daohang/index/media/wx.ico", "title": "公众号", "desc": "微信公众号管理平台", "url": "https://mp.weixin.qq.com/" },
-        { "icon": "/image/daohang/sioe.ico", "title": "颜色转化器", "desc": "RGB、十六进制等颜色格式转换", "url": "https://www.sioe.cn/yingyong/yanse-rgb-16/" },
-        { "icon": "/image/daohang/wechatsync.jpg", "title": "文章同步助手", "desc": "多平台文章一键同步工具", "url": "https://www.wechatsync.com/" },
-        { "icon": "/image/daohang/timestamp.png", "title": "时间戳转换 (Unix - 北京)", "desc": "Unix 时间戳与北京时间相互转换", "url": "https://tool.lu/timestamp/" },
-        { "icon": "/image/daohang/epochConverter.jpg", "title": "时间戳转换 (Unix-GMT，批量)", "desc": "批量 Unix 时间戳与 GMT 时间转换", "url": "https://www.epochconverter.com/" },
-        { "icon": "/image/daohang/dx.png", "title": "字母大小写转换", "desc": "英文字母大小写快速转换", "url": "http://www.wetools.com/text-case-convert/a9c2e510d3a2d0e5add9b68a27086b9e" }
-      ]
-    }
+
   ]
 }
